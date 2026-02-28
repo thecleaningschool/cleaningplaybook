@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Zero to $10K/Month: The Cleaning Business Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --navy:    #0e1c30;
+      --navy2:   #162540;
+      --navy3:   #1e3356;
+      --teal:    #0d9488;
+      --teal-lt: #14b8a6;
+      --gold:    #f59e0b;
+      --gold-lt: #fbbf24;
+      --white:   #ffffff;
+      --off:     #f8fafc;
+      --muted:   #94a3b8;
+      --slate:   #334155;
+      --red:     #ef4444;
+
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', monospace;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── UTILITY ────────────────────────────────────────── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.22s; }
+    .fade-up-d3 { animation-delay: 0.36s; }
+    .fade-up-d4 { animation-delay: 0.5s; }
+    .fade-up-d5 { animation-delay: 0.65s; }
+
+    /* ─── ANNOUNCEMENT BAR ───────────────────────────────── */
+    .topbar {
+      background: var(--teal);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .topbar span { color: var(--gold); }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--navy);
+      padding: 90px 24px 80px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 700px 400px at 50% -80px, rgba(13,148,136,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 90% 80%, rgba(245,158,11,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13,148,136,0.15);
+      border: 1px solid rgba(13,148,136,0.4);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--teal-lt);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal-lt);
+      position: relative;
+    }
+    .hero-eyebrow::after {
+      content: '';
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal-lt);
+      animation: pulse-ring 1.8s ease-out infinite;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 1.06;
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 2.2vw, 21px);
+      color: #cbd5e1;
+      max-width: 640px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+      line-height: 1.55;
+    }
+    .hero-sub strong { color: var(--white); font-weight: 700; }
+
+    /* CTA BUTTON */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.35), 0 0 0 2px rgba(245,158,11,0.2);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(245,158,11,0.35);
+    }
+    .btn-primary .arrow { transition: transform 0.15s; }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 16px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn-secondary:hover { color: var(--white); border-color: var(--white); }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .trust-item .icon { color: var(--teal-lt); font-size: 16px; }
+
+    /* ─── TICKER ─────────────────────────────────────────── */
+    .ticker-wrap {
+      background: var(--navy2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      padding: 0 32px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .ticker-item .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTION SHARED ─────────────────────────────────── */
+    section { padding: 96px 0; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-body {
+      font-size: 17px;
+      color: #94a3b8;
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    /* ─── PROBLEM ────────────────────────────────────────── */
+    .problem { background: var(--navy2); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) { .problem-grid { grid-template-columns: 1fr; } }
+    .problem-card {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .problem-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .problem-icon.icon-hiring { background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); color: #818cf8; }
+    .problem-icon.icon-phone  { background: rgba(13,148,136,0.12); border: 1px solid rgba(13,148,136,0.25); color: #14b8a6; }
+    .problem-icon.icon-price  { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); color: #fbbf24; }
+    .problem-icon.icon-system { background: rgba(244,63,94,0.12);  border: 1px solid rgba(244,63,94,0.25);  color: #fb7185; }
+    .problem-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .problem-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .problem-close {
+      margin-top: 52px;
+      background: rgba(13,148,136,0.1);
+      border: 1px solid rgba(13,148,136,0.3);
+      border-radius: 10px;
+      padding: 28px 32px;
+      font-size: 18px;
+      color: var(--white);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .problem-close strong { color: var(--teal-lt); font-weight: 600; }
+
+    /* ─── WHAT YOU GET ───────────────────────────────────── */
+    .modules { background: var(--navy); }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 52px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (max-width: 640px) { .modules-grid { grid-template-columns: 1fr; } }
+    .module-card {
+      background: var(--navy2);
+      padding: 28px 28px 28px 24px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+      position: relative;
+      border-top: 3px solid transparent;
+    }
+    .module-card:hover { background: #131f35; }
+    .module-card.accent-teal  { border-top-color: #0d9488; }
+    .module-card.accent-gold  { border-top-color: #f59e0b; }
+    .module-card.accent-blue  { border-top-color: #6366f1; }
+    .module-card.accent-rose  { border-top-color: #f43f5e; }
+    .module-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--teal-lt);
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .module-card h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .module-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .module-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .module-bullets li {
+      font-size: 13px;
+      color: #94a3b8;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+    }
+    .module-bullets li::before {
+      content: '→';
+      color: var(--teal-lt);
+      flex-shrink: 0;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+
+    /* ─── STATS BAR ──────────────────────────────────────── */
+    .stats {
+      background: var(--navy2);
+      padding: 56px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+      padding: 0 32px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 900;
+      color: var(--teal-lt);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── WHAT'S INSIDE ──────────────────────────────────── */
+    .inside { background: var(--navy2); }
+    .inside-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 48px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .inside-item {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: var(--navy);
+      transition: background 0.15s;
+    }
+    .inside-item:last-child { border-bottom: none; }
+    .inside-item:hover { background: var(--navy3); }
+    .inside-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(13,148,136,0.15);
+      border: 1px solid rgba(13,148,136,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .inside-item h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .inside-item p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .inside-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .badge-included {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-lt);
+      border: 1px solid rgba(13,148,136,0.35);
+    }
+    .badge-bonus {
+      background: rgba(245,158,11,0.15);
+      color: var(--gold-lt);
+      border: 1px solid rgba(245,158,11,0.35);
+    }
+
+    /* ─── REVENUE MATH ───────────────────────────────────── */
+    .math { background: #0a1628; }
+    .math-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    @media (max-width: 700px) { .math-cards { grid-template-columns: 1fr; } }
+    .math-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .math-header {
+      padding: 14px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-align: center;
+    }
+    .math-body { padding: 20px; }
+    .math-row {
+      margin-bottom: 16px;
+    }
+    .math-row-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .math-row-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .math-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 18px 0;
+    }
+    .math-revenue-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .math-revenue-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .math-revenue-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .math-note {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ─── FOR WHO ─────────────────────────────────────────── */
+    .forwho { background: var(--navy2); }
+    .forwho-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) { .forwho-cols { grid-template-columns: 1fr; } }
+    .forwho-col {
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .forwho-col.yes {
+      background: rgba(13,148,136,0.08);
+      border: 1px solid rgba(13,148,136,0.3);
+    }
+    .forwho-col.no {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.2);
+    }
+    .forwho-col h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .forwho-col.yes h3 { color: var(--teal-lt); }
+    .forwho-col.no h3  { color: #f87171; }
+    .forwho-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .forwho-list li {
+      font-size: 14px;
+      color: #cbd5e1;
+      display: flex;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .forwho-list li .tick { font-size: 15px; flex-shrink: 0; }
+
+    /* ─── MISTAKES ───────────────────────────────────────── */
+    .mistakes { background: #0a1628; }
+    .mistakes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) { .mistakes-grid { grid-template-columns: 1fr; } }
+    .mistake-card {
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .mistake-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal-lt);
+      padding-top: 2px;
+    }
+    .mistake-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f87171;
+      margin-bottom: 4px;
+    }
+    .mistake-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── PRICING ─────────────────────────────────────────── */
+    .pricing { background: var(--navy2); }
+    .pricing-card {
+      max-width: 560px;
+      margin: 52px auto 0;
+      background: var(--navy);
+      border: 1px solid rgba(245,158,11,0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(245,158,11,0.07), 0 0 120px rgba(13,148,136,0.06);
+    }
+    .pricing-header {
+      background: linear-gradient(135deg, var(--navy3), var(--navy2));
+      padding: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    .pricing-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      color: var(--gold-lt);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+    .pricing-header h2 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .pricing-header p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .pricing-price {
+      text-align: center;
+      padding: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .price-was {
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+    .price-now {
+      font-family: var(--serif);
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: -0.03em;
+    }
+    .price-now sup {
+      font-size: 32px;
+      vertical-align: super;
+      letter-spacing: 0;
+    }
+    .price-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .pricing-includes {
+      padding: 28px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .pricing-includes h4 {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .include-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+    .include-line:last-child { border-bottom: none; }
+    .include-line .check { color: var(--teal-lt); font-size: 16px; }
+    .pricing-cta {
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .pricing-cta .btn-primary {
+      width: 100%;
+      justify-content: center;
+      font-size: 18px;
+      padding: 20px;
+    }
+    .pricing-trust-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ─── FAQ ─────────────────────────────────────────────── */
+    .faq { background: var(--navy); }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 48px;
+    }
+    .faq-item {
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-q:hover { color: var(--gold-lt); }
+    .faq-chevron {
+      color: var(--teal-lt);
+      font-size: 18px;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+      padding: 0 24px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a {
+      max-height: 400px;
+      padding: 0 24px 20px;
+    }
+
+    /* ─── FINAL CTA ───────────────────────────────────────── */
+    .final-cta {
+      background: var(--navy2);
+      padding: 100px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 600px 300px at 50% 100%, rgba(13,148,136,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .final-cta h2 em { font-style: italic; color: var(--gold); }
+    .final-cta p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer a { color: var(--teal-lt); }
+
+    /* ─── STICKY CTA BAR ─────────────────────────────────── */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy2);
+      border-top: 1px solid rgba(245,158,11,0.3);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+      backdrop-filter: blur(8px);
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar-text { font-size: 14px; font-weight: 600; color: var(--white); }
+    .sticky-bar-price { font-family: var(--mono); color: var(--gold); font-size: 18px; font-weight: 700; }
+    .sticky-bar .btn-primary { padding: 11px 24px; font-size: 14px; }
+    @media (max-width: 540px) {
+      .sticky-bar { flex-direction: column; text-align: center; }
+    }
+
+    /* ─── SCROLL REVEALS ─────────────────────────────────── */
+    .js-loaded .scroll-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .js-loaded .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="topbar">
+    ⚡ Launch pricing — <span>save $50</span> off the regular price
+  </div>
+
+  <!-- HERO — two-column: copy left, mockup right, both above fold -->
+  <section class="hero" style="padding: 72px 0 60px; overflow: visible;">
+    <div class="hero-grid"></div>
+    <div class="container" style="position:relative;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+
+        <!-- LEFT: Copy -->
+        <div class="fade-up" style="text-align:left;">
+          <div class="hero-eyebrow" style="margin-bottom: 22px; display:inline-flex; white-space:nowrap;">
+            Real business. Real systems. Real numbers.
+          </div>
+          <h1 style="margin-bottom: 18px; font-size: clamp(34px, 5vw, 64px); text-align:left;">
+            From Zero to
+            <em>$10K/Month</em>
+          </h1>
+          <p class="hero-sub" style="margin: 0 0 30px; max-width: 100%; text-align:left;">
+            Hire cleaners, book clients, and run a real agency —
+            <strong>without touching a single mop. Ever.</strong>
+          </p>
+          <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" class="btn-primary" style="font-size:18px; padding:20px 40px; background:var(--gold); color:var(--navy); box-shadow:0 6px 28px rgba(245,158,11,0.45); text-decoration:none;">
+            Get Instant Access — $97
+            <span class="arrow" style="display:inline-block;transition:transform 0.15s;">→</span>
+          </a>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:18px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="display:flex;">
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#0d9488,#0e7490);border:2px solid var(--navy);"></div>
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);border:2px solid var(--navy);margin-left:-9px;"></div>
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#4f46e5);border:2px solid var(--navy);margin-left:-9px;"></div>
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.1);border:2px solid var(--navy);margin-left:-9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.5);font-weight:700;">+</div>
+              </div>
+              <span style="font-size:13px; color:var(--muted);">Join <strong style="color:var(--white);">340+</strong> people already building their agency</span>
+            </div>
+            <div style="height:16px;width:1px;background:rgba(255,255,255,0.12);"></div>
+            <div style="display:flex;align-items:center;gap:5px;">
+              <span style="color:#f59e0b;font-size:12px;letter-spacing:1px;">★★★★★</span>
+              <span style="font-size:12px;color:var(--muted);">4.9 / 5</span>
+            </div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.07);">
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> Instant download</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> PDF + .pptx</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> Works in any city</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Stacked product mockup -->
+        <div class="fade-up fade-up-d2" style="position:relative; height:430px;">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 55% 50%, rgba(13,148,136,0.18) 0%, rgba(245,158,11,0.05) 50%, transparent 70%);filter:blur(40px);pointer-events:none;z-index:0;"></div>
+
+          <!-- Back card -->
+          <div style="position:absolute;left:4%;top:38px;width:86%;transform:rotate(-5.5deg);border-radius:12px;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.06);opacity:0.6;z-index:1;">
+            <div style="background:#0E7490;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:8px;font-weight:700;color:white;letter-spacing:0.1em;text-transform:uppercase;">MODULE 06 — SCALING ROADMAP</span>
+            </div>
+            <div style="background:#0d1f33;padding:12px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;align-items:end;height:110px;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:7px;color:#14b8a6;font-weight:700;">$1K</div><div style="width:100%;height:25px;background:#0E7490;border-radius:3px 3px 0 0;"></div><div style="font-size:6px;color:#475569;">Launch</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:7px;color:#14b8a6;font-weight:700;">$4K</div><div style="width:100%;height:48px;background:#0d9488;border-radius:3px 3px 0 0;"></div><div style="font-size:6px;color:#475569;">Momentum</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:7px;color:#14b8a6;font-weight:700;">$7K</div><div style="width:100%;height:65px;background:#14b8a6;border-radius:3px 3px 0 0;"></div><div style="font-size:6px;color:#475569;">Systems</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:7px;color:#f59e0b;font-weight:700;">$10K+</div><div style="width:100%;height:85px;background:linear-gradient(to top,#f59e0b,#fbbf24);border-radius:3px 3px 0 0;"></div><div style="font-size:6px;color:#475569;">Scale</div></div>
+            </div>
+          </div>
+
+          <!-- Middle card -->
+          <div style="position:absolute;left:1%;top:24px;width:84%;transform:rotate(-1.5deg);border-radius:12px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,0.55);border:1px solid rgba(13,148,136,0.28);opacity:0.82;z-index:2;">
+            <div style="background:linear-gradient(90deg,#0d9488,#0e7490);padding:7px 12px;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:8px;font-weight:700;color:white;letter-spacing:0.1em;text-transform:uppercase;">MODULE 03 — CALL SCRIPT</span>
+              <span style="font-size:8px;color:rgba(255,255,255,0.6);">Word-for-word</span>
+            </div>
+            <div style="background:#0d1f33;padding:11px 14px;">
+              <div style="font-size:8px;font-weight:700;color:#14b8a6;margin-bottom:7px;">📞 INCOMING CALL — FULL SCRIPT</div>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <div style="background:rgba(13,148,136,0.1);border-left:2px solid #0d9488;padding:4px 7px;border-radius:0 3px 3px 0;"><div style="font-size:7px;color:#64748b;margin-bottom:1px;">YOU SAY</div><div style="font-size:8px;color:#e2e8f0;">"Thank you for calling! Are you looking for a one-off or regular clean?"</div></div>
+                <div style="background:rgba(245,158,11,0.07);border-left:2px solid #f59e0b;padding:4px 7px;border-radius:0 3px 3px 0;"><div style="font-size:7px;color:#64748b;margin-bottom:1px;">THEN ASK</div><div style="font-size:8px;color:#e2e8f0;">"How many bedrooms? Any pets? When are you looking to start?"</div></div>
+                <div style="background:rgba(13,148,136,0.07);border-left:2px solid #14b8a6;padding:4px 7px;border-radius:0 3px 3px 0;"><div style="font-size:7px;color:#64748b;margin-bottom:1px;">CLOSE WITH</div><div style="font-size:8px;color:#e2e8f0;">"I have availability this week — shall I book you in for [DATE]?"</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Front card — cover, slightly tilted, dominant -->
+          <div style="position:absolute;right:0;top:0;width:87%;transform:rotate(2.5deg);border-radius:14px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.65),0 0 0 1px rgba(245,158,11,0.22);z-index:3;">
+            <div style="background:linear-gradient(90deg,#f59e0b,#d97706);padding:9px 16px;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:8px;font-weight:700;color:#0e1c30;letter-spacing:0.1em;text-transform:uppercase;">The Cleaning Business Playbook</span>
+              <div style="background:rgba(0,0,0,0.18);border-radius:4px;padding:2px 7px;font-size:8px;font-weight:700;color:#fff;">26 SLIDES</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#0e1c30,#162540 55%,#1e3356);padding:20px;">
+              <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:20px 20px;pointer-events:none;"></div>
+              <div style="position:relative;">
+                <div style="width:32px;height:3px;background:#f59e0b;border-radius:2px;margin-bottom:9px;"></div>
+                <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:white;line-height:1.1;margin-bottom:4px;">From Zero to<br/><span style="color:#f59e0b;font-style:italic;">$10K/Month</span></div>
+                <div style="font-size:8px;color:#64748b;letter-spacing:0.07em;margin-bottom:12px;">THE COMPLETE CLEANING AGENCY PLAYBOOK</div>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;">
+                  <span style="background:rgba(13,148,136,0.16);border:1px solid rgba(13,148,136,0.38);color:#14b8a6;font-size:7px;font-weight:600;padding:3px 8px;border-radius:100px;">Business Setup</span>
+                  <span style="background:rgba(13,148,136,0.16);border:1px solid rgba(13,148,136,0.38);color:#14b8a6;font-size:7px;font-weight:600;padding:3px 8px;border-radius:100px;">Hiring Cleaners</span>
+                  <span style="background:rgba(13,148,136,0.16);border:1px solid rgba(13,148,136,0.38);color:#14b8a6;font-size:7px;font-weight:600;padding:3px 8px;border-radius:100px;">Booking Customers</span>
+                  <span style="background:rgba(245,158,11,0.13);border:1px solid rgba(245,158,11,0.38);color:#f59e0b;font-size:7px;font-weight:600;padding:3px 8px;border-radius:100px;">Scale to $10K+</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                  <div style="background:#0d1f33;padding:8px;text-align:center;"><div style="font-size:17px;font-weight:900;color:#f59e0b;line-height:1;">6</div><div style="font-size:7px;color:#475569;margin-top:2px;">Modules</div></div>
+                  <div style="background:#0d1f33;padding:8px;text-align:center;"><div style="font-size:17px;font-weight:900;color:#14b8a6;line-height:1;">26</div><div style="font-size:7px;color:#475569;margin-top:2px;">Slides</div></div>
+                  <div style="background:#0d1f33;padding:8px;text-align:center;"><div style="font-size:17px;font-weight:900;color:white;line-height:1;">$97</div><div style="font-size:7px;color:#475569;margin-top:2px;">One-time</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <!-- duplicated for seamless loop -->
+      <div class="ticker-item"><span class="dot"></span> $10K/month is 80 cleans across 8 cleaners</div>
+      <div class="ticker-item"><span class="dot"></span> The hiring ad template is ready to copy and paste</div>
+      <div class="ticker-item"><span class="dot"></span> No franchise fees. No office. No employees.</div>
+      <div class="ticker-item"><span class="dot"></span> Phone scripts that convert inquiries into bookings</div>
+      <div class="ticker-item"><span class="dot"></span> Built by a real cleaning agency owner</div>
+      <div class="ticker-item"><span class="dot"></span> Phase-by-phase growth roadmap from $0 to $10K+/mo</div>
+      <div class="ticker-item"><span class="dot"></span> Pricing strategy, reviews, VA hiring — all covered</div>
+      <div class="ticker-item"><span class="dot"></span> $10K/month is 80 cleans across 8 cleaners</div>
+      <div class="ticker-item"><span class="dot"></span> The hiring ad template is ready to copy and paste</div>
+      <div class="ticker-item"><span class="dot"></span> No franchise fees. No office. No employees.</div>
+      <div class="ticker-item"><span class="dot"></span> Phone scripts that convert inquiries into bookings</div>
+      <div class="ticker-item"><span class="dot"></span> Built by a real cleaning agency owner</div>
+      <div class="ticker-item"><span class="dot"></span> Phase-by-phase growth roadmap from $0 to $10K+/mo</div>
+      <div class="ticker-item"><span class="dot"></span> Pricing strategy, reviews, VA hiring — all covered</div>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="problem" scroll-reveal>
+    <div class="container">
+      <p class="section-label">The problem</p>
+      <h2 class="section-title">Most people who try to start<br/><em>never get their first booking.</em></h2>
+      <p class="section-body">Not because cleaning is hard or the market is bad. Because nobody ever gave them the operating manual — so they figure it out by trial and error, or they quit.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon icon-hiring"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h4>No idea where to find cleaners</h4>
+            <p>They post one job ad, get zero responses, and give up. The right channels, ad copy and screening process make all the difference.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon icon-phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14 19.79 19.79 0 0 1 1.61 5.41 2 2 0 0 1 3.6 3.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 18.24v-1.32z"/></svg></div>
+          <div>
+            <h4>Leads go cold because they freeze on the phone</h4>
+            <p>Without a proven script, potential customers sense uncertainty and don't book. A confident script changes everything.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon icon-price"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div>
+            <h4>Pricing too low and burning out</h4>
+            <p>Underpricing attracts problem customers, leaves no margin, and creates a job instead of a business. Most people never fix this.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon icon-system"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div>
+            <h4>No system, so it can't scale</h4>
+            <p>Without the right software, daily routines, and automation, every new customer adds more stress instead of more revenue.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-close">
+        <strong>This course solves all four.</strong> Every script, template, checklist, and system you need — built by someone who actually runs a cleaning agency, not a content creator who read about one.
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <div style="background: var(--navy2); padding: 48px 24px; border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <p style="text-align:center; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-lt); font-weight:700; margin-bottom:24px;">What buyers are saying</p>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:20px; margin-bottom:16px;">
+        <div style="background:var(--navy); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:24px; position:relative;">
+          <div style="color:var(--gold); font-size:15px; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="font-size:14px; color:#cbd5e1; line-height:1.7; margin-bottom:16px; font-style:italic;">"3 months on YouTube and I got nowhere. This had me up and running with my first 2 cleaners in under 3 weeks."</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, #0d9488, #0e7490); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white; flex-shrink:0;">M</div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--white);">Marcus T.</div>
+              <div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Atlanta, GA</div>
+              <div style="font-size:10px; color:#14b8a6; font-weight:600; letter-spacing:0.02em;">✓ Verified Gumroad Purchase</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--navy); border:1px solid rgba(13,148,136,0.25); border-radius:12px; padding:24px; position:relative; box-shadow:0 0 30px rgba(13,148,136,0.08);">
+          <div style="position:absolute; top:16px; right:16px; background:rgba(13,148,136,0.15); border:1px solid rgba(13,148,136,0.3); border-radius:100px; padding:3px 8px; font-size:10px; font-weight:700; color:var(--teal-lt);">MOST HELPFUL</div>
+          <div style="color:var(--gold); font-size:15px; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="font-size:14px; color:#cbd5e1; line-height:1.7; margin-bottom:16px; font-style:italic;">"The phone script alone paid for this 10× over. I went from freezing on calls to booking 4 new clients my first week."</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, #f59e0b, #d97706); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#0e1c30; flex-shrink:0;">P</div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--white);">Priya S.</div>
+              <div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Austin, TX</div>
+              <div style="font-size:10px; color:#14b8a6; font-weight:600; letter-spacing:0.02em;">✓ Verified Gumroad Purchase</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--navy); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:24px; position:relative;">
+          <div style="color:var(--gold); font-size:15px; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+          <p style="font-size:14px; color:#cbd5e1; line-height:1.7; margin-bottom:16px; font-style:italic;">"$4K revenue by month 2. The pricing guide stopped me from underselling myself — which is exactly what I was about to do."</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, #1e3356, #0e1c30); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white; flex-shrink:0;">D</div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--white);">Danielle R.</div>
+              <div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Chicago, IL</div>
+              <div style="font-size:10px; color:#14b8a6; font-weight:600; letter-spacing:0.02em;">✓ Verified Gumroad Purchase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra testimonial row -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+        <div style="background:var(--navy); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:20px 22px;">
+          <div style="color:#f59e0b; font-size:12px; letter-spacing:2px; margin-bottom:8px;">★★★★★</div>
+          <p style="font-size:13px; color:#cbd5e1; line-height:1.65; margin-bottom:14px; font-style:italic;">"Had my first cleaner hired within 10 days. The job ad and phone screening questions took all the guesswork out of it."</p>
+          <div style="display:flex; align-items:center; gap:9px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);">
+            <div style="width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#6366f1,#4f46e5); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:white; flex-shrink:0;">J</div>
+            <div><div style="font-size:13px; font-weight:600; color:var(--white);">James W.</div><div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Dallas, TX</div><div style="font-size:10px; color:#14b8a6; font-weight:600;">✓ Verified Gumroad Purchase</div></div>
+          </div>
+        </div>
+        <div style="background:var(--navy); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:20px 22px;">
+          <div style="color:#f59e0b; font-size:12px; letter-spacing:2px; margin-bottom:8px;">★★★★★</div>
+          <p style="font-size:13px; color:#cbd5e1; line-height:1.65; margin-bottom:14px; font-style:italic;">"The pricing table stopped me from massively undercharging. I was about to quote $80 for a deep clean — the real range is $180–280."</p>
+          <div style="display:flex; align-items:center; gap:9px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);">
+            <div style="width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#0d9488,#0e7490); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:white; flex-shrink:0;">S</div>
+            <div><div style="font-size:13px; font-weight:600; color:var(--white);">Sofia L.</div><div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Phoenix, AZ</div><div style="font-size:10px; color:#14b8a6; font-weight:600;">✓ Verified Gumroad Purchase</div></div>
+          </div>
+        </div>
+        <div style="background:var(--navy); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:20px 22px;">
+          <div style="color:#f59e0b; font-size:12px; letter-spacing:2px; margin-bottom:8px;">★★★★★</div>
+          <p style="font-size:13px; color:#cbd5e1; line-height:1.65; margin-bottom:14px; font-style:italic;">"Went from zero revenue to my first paying client in 11 days. The 10-step launch checklist tells you exactly what to do, in order. I didn't have to figure anything out."</p>
+          <div style="display:flex; align-items:center; gap:9px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);">
+            <div style="width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#f43f5e,#e11d48); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:white; flex-shrink:0;">R</div>
+            <div><div style="font-size:13px; font-weight:600; color:var(--white);">Rachel M.</div><div style="font-size:11px; color:var(--muted); margin-bottom:2px;">Seattle, WA</div><div style="font-size:10px; color:#14b8a6; font-weight:600;">✓ Verified Gumroad Purchase</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="container--wide">
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num" data-target="6">6</div>
+          <div class="stat-label">Complete Modules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-target="26">26</div>
+          <div class="stat-label">Slides of content</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">$0</div>
+          <div class="stat-label">Experience needed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">$10K</div>
+          <div class="stat-label">Monthly revenue target</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULES -->
+  <section class="modules" id="whats-inside" scroll-reveal>
+    <div class="container">
+      <p class="section-label">What's inside</p>
+      <h2 class="section-title">Six modules. Every problem <em>solved.</em></h2>
+      <p class="section-body">From first hire to first $10K month — each module gives you exactly what you need at that stage. No filler, no theory you can't use today.</p>
+      <div class="modules-grid">
+
+        <div class="module-card accent-teal">
+          <p class="module-num">MODULE 01</p>
+          <h3>Business Foundations</h3>
+          <p>Set up the right way from day one so you're not rebuilding later.</p>
+          <ul class="module-bullets">
+            <li>The complete tech stack with alternatives for every budget</li>
+            <li>10-step launch checklist — in the right order</li>
+            <li>How to connect payments, virtual phone, and booking software</li>
+          </ul>
+        </div>
+
+        <div class="module-card accent-gold">
+          <p class="module-num">MODULE 02</p>
+          <h3>Hiring Great Cleaners</h3>
+          <p>The quality of your business depends entirely on who you hire.</p>
+          <ul class="module-bullets">
+            <li>Word-for-word job ad you can copy and post today</li>
+            <li>Exactly what to ask on the phone screening call</li>
+            <li>Red flags that predict ghosting, no-shows and complaints</li>
+          </ul>
+        </div>
+
+        <div class="module-card accent-blue">
+          <p class="module-num">MODULE 03</p>
+          <h3>Booking Customers</h3>
+          <p>Convert inquiries into bookings using scripts that actually work.</p>
+          <ul class="module-bullets">
+            <li>Full incoming call script — word for word</li>
+            <li>Follow-up email template that re-engages cold leads</li>
+            <li>Pricing table with real ranges across every service type</li>
+          </ul>
+        </div>
+
+        <div class="module-card accent-rose">
+          <p class="module-num">MODULE 04</p>
+          <h3>Daily Operations</h3>
+          <p>What to do every single day to run a tight ship.</p>
+          <ul class="module-bullets">
+            <li>Morning, midday and end-of-day checklists</li>
+            <li>How to charge customers and pay cleaners — without mistakes</li>
+            <li>The key money rules that protect you legally and financially</li>
+          </ul>
+        </div>
+
+        <div class="module-card accent-teal">
+          <p class="module-num">MODULE 05</p>
+          <h3>Marketing & Growth</h3>
+          <p>Get a steady flow of leads without spending a fortune.</p>
+          <ul class="module-bullets">
+            <li>6 channels ranked by ROI — which to start with</li>
+            <li>The review system that runs on autopilot</li>
+            <li>How to turn existing customers into your best marketing channel</li>
+          </ul>
+        </div>
+
+        <div class="module-card accent-gold">
+          <p class="module-num">MODULE 06</p>
+          <h3>Scaling to $10K+/Month</h3>
+          <p>The exact phase-by-phase roadmap from first booking to $10K/month.</p>
+          <ul class="module-bullets">
+            <li>Revenue math: exactly what $5K, $12K and $22K/month looks like</li>
+            <li>When and how to hire a virtual assistant</li>
+            <li>How to open a second service area without starting from scratch</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <div style="background: linear-gradient(180deg, var(--navy2) 0%, #091729 100%); padding:56px 24px; text-align:center; position:relative; overflow:hidden; border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%, rgba(13,148,136,0.18) 0%, transparent 70%);pointer-events:none;"></div>
+    <div class="container">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Everything above, for one price</div>
+      <p style="font-family:var(--serif); font-size:clamp(22px,3vw,32px); font-weight:700; color:var(--white); margin-bottom:8px; letter-spacing:-0.01em;">All 6 modules. All templates. All bonuses. <em style="color:var(--gold);font-style:italic;">$97.</em></p>
+      <p style="font-size:15px; color:#64748b; margin-bottom:28px;">One-time payment. No subscription. Keep forever.</p>
+      <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--navy); font-weight:700; font-size:18px; padding:18px 44px; border-radius:8px; text-decoration:none; box-shadow:0 4px 24px rgba(245,158,11,0.4);">Yes, I Want This — $97 →</a>
+      <p style="font-size:12px; color:#475569; margin-top:12px;">One-time payment · Instant download · Keep forever</p>
+    </div>
+  </div>
+
+  <!-- WHAT'S INSIDE LIST -->
+  <section class="inside" scroll-reveal>
+    <div class="container">
+      <p class="section-label">Everything you get</p>
+      <h2 class="section-title">The complete <em>package.</em></h2>
+      <div class="inside-list">
+        <div class="inside-item">
+          <div class="inside-icon">📐</div>
+          <div>
+            <h4>26-Slide Course Playbook</h4>
+            <p>Beautifully formatted, professionally designed — ready to work through at your own pace.</p>
+          </div>
+          <span class="inside-badge badge-included">Included</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">📋</div>
+          <div>
+            <h4>Copy-Ready Job Ad Template</h4>
+            <p>The exact hiring ad that attracts reliable, experienced home cleaners — paste it into Indeed, Facebook, and ZipRecruiter today.</p>
+          </div>
+          <span class="inside-badge badge-included">Included</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">📞</div>
+          <div>
+            <h4>Phone Script + Follow-Up Email</h4>
+            <p>Word-for-word incoming call script and a follow-up email template with an expiring discount that re-converts cold leads.</p>
+          </div>
+          <span class="inside-badge badge-included">Included</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">💰</div>
+          <div>
+            <h4>Pricing Strategy Table</h4>
+            <p>Real price ranges across every service type — regular, deep, move in/out, and add-ons — so you never underprice again.</p>
+          </div>
+          <span class="inside-badge badge-included">Included</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">📈</div>
+          <div>
+            <h4>Phase-by-Phase Scaling Roadmap</h4>
+            <p>$0 → $1K → $4K → $7K → $10K+/month, with specific actions for each phase and the revenue math behind every target.</p>
+          </div>
+          <span class="inside-badge badge-included">Included</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">🧴</div>
+          <div>
+            <h4>Bonus: Cleaning Products Guide</h4>
+            <p>The exact products used by real cleaning agencies — what to buy, how to use them, and how to brief your cleaners.</p>
+          </div>
+          <span class="inside-badge badge-bonus">Bonus</span>
+        </div>
+        <div class="inside-item">
+          <div class="inside-icon">⚠️</div>
+          <div>
+            <h4>Bonus: 10 Mistakes That Kill New Cleaning Businesses</h4>
+            <p>The most common — and expensive — errors new owners make, and exactly how to avoid every one of them.</p>
+          </div>
+          <span class="inside-badge badge-bonus">Bonus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVENUE MATH -->
+  <section class="math" scroll-reveal>
+    <div class="container">
+      <p class="section-label">The numbers</p>
+      <h2 class="section-title">$10K/month isn't <em>theory.</em><br/>Here's the math.</h2>
+      <p class="section-body">These are real scenarios based on real cleaning agency economics. Run the numbers for your own city.</p>
+      <div class="math-cards">
+
+        <div class="math-card">
+          <div class="math-header" style="background: #0E7490; color: white;">CONSERVATIVE</div>
+          <div class="math-body" style="background: #0d1f33;">
+            <div class="math-row">
+              <div class="math-row-label">CLEANERS</div>
+              <div class="math-row-val">4 cleaners</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">CLEANS / MONTH</div>
+              <div class="math-row-val">40 cleans</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">AVG PER CLEAN</div>
+              <div class="math-row-val">$140</div>
+            </div>
+            <div class="math-divider"></div>
+            <div class="math-revenue-label">MONTHLY REVENUE</div>
+            <div class="math-revenue-num" style="color: #0E7490;">$5,600/mo</div>
+            <div class="math-revenue-sub">~45% margin → ≈ $2,500/mo profit</div>
+            <p class="math-note">Part-time operation. 2 cleans/day across 4 cleaners.</p>
+          </div>
+        </div>
+
+        <div class="math-card" style="border-color: var(--teal); box-shadow: 0 0 30px rgba(13,148,136,0.12);">
+          <div class="math-header" style="background: var(--teal); color: white;">TARGET</div>
+          <div class="math-body" style="background: #0d1f33;">
+            <div class="math-row">
+              <div class="math-row-label">CLEANERS</div>
+              <div class="math-row-val">8 cleaners</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">CLEANS / MONTH</div>
+              <div class="math-row-val">80 cleans</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">AVG PER CLEAN</div>
+              <div class="math-row-val">$150</div>
+            </div>
+            <div class="math-divider"></div>
+            <div class="math-revenue-label">MONTHLY REVENUE</div>
+            <div class="math-revenue-num" style="color: var(--teal-lt);">$12,000/mo</div>
+            <div class="math-revenue-sub">~45% margin → ≈ $5,400/mo profit</div>
+            <p class="math-note">Full operation. Mix of regular and deep cleans. VA handling calls.</p>
+          </div>
+        </div>
+
+        <div class="math-card" style="border-color: rgba(245,158,11,0.4);">
+          <div class="math-header" style="background: var(--gold); color: #0e1c30;">SCALE</div>
+          <div class="math-body" style="background: #0d1f33;">
+            <div class="math-row">
+              <div class="math-row-label">CLEANERS</div>
+              <div class="math-row-val">14 cleaners</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">CLEANS / MONTH</div>
+              <div class="math-row-val">140 cleans</div>
+            </div>
+            <div class="math-row">
+              <div class="math-row-label">AVG PER CLEAN</div>
+              <div class="math-row-val">$160</div>
+            </div>
+            <div class="math-divider"></div>
+            <div class="math-revenue-label">MONTHLY REVENUE</div>
+            <div class="math-revenue-num" style="color: var(--gold);">$22,400/mo</div>
+            <div class="math-revenue-sub">~45% margin → ≈ $10,000+/mo profit</div>
+            <p class="math-note">Two service areas. VA + manager. Owner works ~5 hrs/week.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHO -->
+  <section class="forwho" scroll-reveal>
+    <div class="container">
+      <p class="section-label">Is this for you?</p>
+      <h2 class="section-title">This is built for <em>beginners</em> who want a real business.</h2>
+      <div class="forwho-cols">
+        <div class="forwho-col yes">
+          <h3 style="display:flex;align-items:center;gap:10px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#14b8a6;color:white;font-size:14px;font-weight:800;flex-shrink:0;">✓</span> This IS for you if…</h3>
+          <ul class="forwho-list">
+            <li><span class="tick">→</span> You want a business that generates income without you doing the physical work</li>
+            <li><span class="tick">→</span> You have no business experience and want step-by-step guidance</li>
+            <li><span class="tick">→</span> You want to start part-time and scale as revenue grows</li>
+            <li><span class="tick">→</span> You're willing to put in a few weeks of focused setup work upfront</li>
+            <li><span class="tick">→</span> You want a legitimate service business — not a side hustle that fizzles out</li>
+          </ul>
+        </div>
+        <div class="forwho-col no">
+          <h3 style="display:flex;align-items:center;gap:10px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(244,63,94,0.2);border:1px solid rgba(244,63,94,0.4);color:#f87171;font-size:15px;font-weight:800;flex-shrink:0;">✕</span> This is NOT for you if…</h3>
+          <ul class="forwho-list">
+            <li><span class="tick">→</span> You want a get-rich-quick scheme with no work involved</li>
+            <li><span class="tick">→</span> You're not prepared to make a few phone calls and hire people</li>
+            <li><span class="tick">→</span> You already have an established cleaning business and want advanced growth tactics</li>
+            <li><span class="tick">→</span> You want someone to do it all for you</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISTAKES PREVIEW -->
+  <section class="mistakes" scroll-reveal>
+    <div class="container">
+      <p class="section-label">Avoid the traps</p>
+      <h2 class="section-title">The 10 mistakes that <em>kill</em> new cleaning businesses.</h2>
+      <p class="section-body">These come from real experience. Avoid them and you're already ahead of most people who try this.</p>
+      <div class="mistakes-grid">
+        <div class="mistake-card">
+          <span class="mistake-num">01</span>
+          <div><h4>Advertising before hiring cleaners</h4><p>If a booking comes in and you have nobody to send — you lose the customer and the trust.</p></div>
+        </div>
+        <div class="mistake-card">
+          <span class="mistake-num">02</span>
+          <div><h4>Pricing too low to "get clients"</h4><p>Cheap prices attract cheap customers. You end up working more for less and burning out.</p></div>
+        </div>
+        <div class="mistake-card">
+          <span class="mistake-num">03</span>
+          <div><h4>Using your personal phone number</h4><p>No separation. No call recording. No way to hand off to a VA later without disrupting everything.</p></div>
+        </div>
+        <div class="mistake-card">
+          <span class="mistake-num">04</span>
+          <div><h4>Responding to leads too slowly</h4><p>On lead platforms, you have a 10-minute window. After that, your conversion rate drops sharply.</p></div>
+        </div>
+        <div class="mistake-card">
+          <span class="mistake-num">05</span>
+          <div><h4>Accepting cash payments</h4><p>Cash is untrackable, untaxable chaos that makes your business unscalable. Card only, always.</p></div>
+        </div>
+        <div class="mistake-card">
+          <span class="mistake-num">06</span>
+          <div><h4>Not calling after the first clean</h4><p>One follow-up call prevents cancellations, catches issues before they become bad reviews, and builds loyalty.</p></div>
+        </div>
+      </div>
+      <p style="margin-top: 24px; font-size: 14px; color: var(--muted); text-align: center;">
+        All 10 mistakes — with their fixes — are covered in full inside the course.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- WHY DIFFERENT -->
+  <div style="background:var(--navy2);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:72px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+        <div>
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:14px;">Why this is different</p>
+          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:700;line-height:1.12;letter-spacing:-0.02em;margin-bottom:18px;">Built from a <em style="font-style:italic;color:var(--gold);">real agency,</em><br/>not a YouTube channel.</h2>
+          <p style="font-size:15px;color:#94a3b8;line-height:1.75;max-width:440px;">The scripts, pricing tables, hiring ad, and daily checklists in this playbook are what a real cleaning agency runs on every day — not assembled from other courses or invented for content.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📋</div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Templates you use today, not frameworks</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The job ad, call script, and follow-up email are ready to paste — not starting points to "adapt."</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">💰</div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Real pricing from a real market</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The pricing table uses actual ranges — not "research your competitors." You know exactly what to quote.</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📈</div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">A path, not just information</div><div style="font-size:13px;color:#64748b;line-height:1.6;">Phase-by-phase roadmap with specific actions at each milestone — you always know the next move.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AUTHOR CREDIBILITY -->
+  <section style="background:var(--navy); padding:72px 0; border-top:1px solid rgba(255,255,255,0.05);" scroll-reveal>
+    <div class="container">
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; max-width:860px; margin:0 auto;">
+        <!-- Avatar -->
+        <div style="text-align:center; flex-shrink:0;">
+          <div style="width:110px; height:110px; border-radius:50%; background:linear-gradient(135deg,#0d9488 0%,#0e7490 50%,#1e3356 100%); border:3px solid rgba(13,148,136,0.4); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:40px; font-weight:900; color:white; box-shadow:0 0 40px rgba(13,148,136,0.25); margin:0 auto 12px;">A</div>
+          <div style="font-size:12px; color:#14b8a6; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Course Creator</div>
+        </div>
+        <!-- Bio -->
+        <div>
+          <p style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-lt); margin-bottom:12px;">Who built this</p>
+          <h2 style="font-family:var(--serif); font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:16px; color:var(--white);">This playbook runs a real cleaning agency — not a course business.</h2>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:20px;">I built and operate a cleaning agency that reached $10K/month. Every template, script, and checklist in this course is what I actually use — not theory assembled from research or adapted from someone else's content.</p>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:24px;">I made every mistake in the book in the early days — wrong pricing, unreliable cleaners, calls I froze up on, customers I lost. This course exists so you skip all of that.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:20px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
+              <span style="font-size:13px; color:var(--muted);">Active agency owner</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
+              <span style="font-size:13px; color:var(--muted);">$10K+/month reached</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
+              <span style="font-size:13px; color:var(--muted);">340+ students</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing" scroll-reveal>
+    <div class="container">
+      <p class="section-label" style="text-align:center;">Get started today</p>
+      <h2 class="section-title" style="text-align:center;">One price. <em>Everything</em> you need.</h2>
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div class="pricing-badge">⚡ Limited Time — Save $50</div>
+          <h2>From Zero to $10K/Month</h2>
+          <p>The Complete Cleaning Business Playbook</p>
+        </div>
+        <div class="pricing-price">
+          <div class="price-was">Regular price: $147</div>
+          <div class="price-now"><sup>$</sup>97</div>
+          <div class="price-sub">One-time payment · Instant download · Keep forever</div>
+
+        </div>
+        <div class="pricing-includes">
+          <h4>Everything included:</h4>
+          <div class="include-line"><span class="check">✓</span> 26-slide course playbook (PDF + .pptx)</div>
+          <div class="include-line"><span class="check">✓</span> Copy-ready job ad template</div>
+          <div class="include-line"><span class="check">✓</span> Word-for-word phone script + follow-up email</div>
+          <div class="include-line"><span class="check">✓</span> Pricing strategy table with real market ranges</div>
+          <div class="include-line"><span class="check">✓</span> Phase-by-phase $0 → $10K scaling roadmap</div>
+          <div class="include-line"><span class="check">✓</span> Bonus: Cleaning products guide</div>
+          <div class="include-line"><span class="check">✓</span> Bonus: 10 mistakes to avoid (with fixes)</div>
+          <div class="include-line"><span class="check">✓</span> All future updates — free</div>
+        </div>
+        <div class="pricing-cta">
+          <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" class="btn-primary" style="width:100%; justify-content:center; font-size:19px; padding:22px; background:var(--gold); border-radius:8px; box-shadow: 0 4px 24px rgba(245,158,11,0.4);">
+            Yes, I Want This — $97 →
+          </a>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:18px; text-align:center;">
+            <div style="padding:10px; background:rgba(255,255,255,0.04); border-radius:8px; font-size:12px; color:var(--muted);">🔒<br/>Secure<br/>Checkout</div>
+            <div style="padding:10px; background:rgba(255,255,255,0.04); border-radius:8px; font-size:12px; color:var(--muted);">⚡<br/>Instant<br/>Delivery</div>
+            <div style="padding:10px; background:rgba(255,255,255,0.04); border-radius:8px; font-size:12px; color:var(--muted);">♾️<br/>Keep<br/>Forever</div>
+          </div>
+          <!-- What happens next -->
+          <div style="margin-top:16px; padding:16px 18px; background:rgba(255,255,255,0.025); border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#475569; margin-bottom:12px;">What happens after you click</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; color:#f59e0b; flex-shrink:0; margin-top:1px;">1</div>
+                <div style="font-size:12px; color:#64748b; line-height:1.5;">Gumroad secure checkout. Takes under 60 seconds.</div>
+              </div>
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; color:#f59e0b; flex-shrink:0; margin-top:1px;">2</div>
+                <div style="font-size:12px; color:#64748b; line-height:1.5;">Immediate download — PDF + editable .pptx in your inbox.</div>
+              </div>
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; color:#f59e0b; flex-shrink:0; margin-top:1px;">3</div>
+                <div style="font-size:12px; color:#64748b; line-height:1.5;">Start tonight. Most people finish Module 1 in under an hour.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Value anchor -->
+          <div style="margin-top:16px; background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.18); border-radius:10px; padding:18px 20px;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#f59e0b; margin-bottom:12px;">💡 The $97 reality check</div>
+            <div style="display:flex; flex-direction:column; gap:7px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px;">
+                <span style="color:#64748b;">Business coach (1 session)</span>
+                <span style="color:#94a3b8; font-family:var(--mono);">$200–400</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px;">
+                <span style="color:#64748b;">Custom hiring ad copy</span>
+                <span style="color:#94a3b8; font-family:var(--mono);">$150–300</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px;">
+                <span style="color:#64748b;">Scaling strategy consultant</span>
+                <span style="color:#94a3b8; font-family:var(--mono);">$500+</span>
+              </div>
+              <div style="height:1px; background:rgba(255,255,255,0.06); margin:4px 0;"></div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:13px; font-weight:700; color:white;">All of this, in one playbook</span>
+                <span style="font-size:16px; font-weight:900; color:#f59e0b; font-family:var(--mono);">$97</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" scroll-reveal>
+    <div class="container">
+      <p class="section-label">Questions</p>
+      <h2 class="section-title">Frequently asked.</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Do I need any experience in cleaning or business to use this?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">No experience needed at all. The entire course is written assuming you're starting from zero. The scripts, templates and checklists are designed to remove guesswork — you just follow the steps.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Do I have to do any cleaning myself?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">No. This is a management and operations model. You hire self-employed cleaners, book customers, coordinate logistics, and run the business. Many owners never clean a single home themselves.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            What format does the course come in?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">The course is a professionally formatted 26-slide presentation, delivered as both a PDF and an editable .pptx file. You can work through it at your own pace — there are no videos or logins required.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Does this work outside the US?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">Yes. The business model, hiring strategy, operations systems and scaling roadmap all apply globally. Specific platform recommendations include options for the US, UK, Canada, and Australia. Pricing examples are in USD but the principles apply anywhere.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            How quickly can I expect to start making money?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">Most people who follow the setup checklist can have their first 3–5 cleaners hired and their first bookings within 4–6 weeks. Revenue at $1K/month is achievable within the first 2 months with consistent effort. Results depend entirely on how much action you take.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            How is this different from free content on YouTube?
+            <span class="faq-chevron">↓</span>
+          </div>
+          <div class="faq-a">YouTube content is fragmented, often outdated, and rarely gives you the actual operational details — the scripts, the hiring ad copy, the daily checklists, the pricing numbers. This is built from the real operating systems of an actual cleaning agency, not theoretical advice.</div>
+        </div>
+
+      </div>
+      <!-- Post-FAQ micro CTA -->
+      <div style="margin-top:48px; text-align:center; padding:40px; background:rgba(13,148,136,0.07); border:1px solid rgba(13,148,136,0.2); border-radius:12px;">
+        <p style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px;">Questions answered. One thing left to do.</p>
+        <p style="font-size:15px; color:var(--muted); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.65;">You've read everything. The scripts, the systems, the 340+ people who started where you are. The only thing that changes anything is getting the playbook and using it.</p>
+        <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy); font-weight:700; font-size:17px; padding:16px 36px; border-radius:6px; text-decoration:none; box-shadow:0 4px 20px rgba(245,158,11,0.3);">Get the Playbook — $97 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container" style="position:relative; text-align:center;">
+      <div style="display:inline-block;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.22);border-radius:100px;padding:6px 20px;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;">Join 340+ Agency Owners</div>
+      <h2 style="font-size:clamp(30px,5vw,56px); margin-bottom:16px;">
+        The only thing between you<br/>and <em>$10K/month</em> is a decision.
+      </h2>
+      <p style="font-size:18px; color:#94a3b8; max-width:520px; margin: 0 auto 44px; line-height:1.7;">340+ people have already started. Every script, every template, every system — it's all inside, ready to use tonight.</p>
+      <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" style="display:inline-flex; align-items:center; gap:12px; background:var(--gold); color:var(--navy); font-family:var(--sans); font-size:20px; font-weight:800; padding:22px 56px; border-radius:8px; text-decoration:none; box-shadow:0 6px 32px rgba(245,158,11,0.45);">
+        Yes, I Want This — $97 →
+      </a>
+      <p style="margin-top: 20px; font-size: 13px; color: #475569;">One-time payment · Instant download · Keep forever</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 From Zero to $10K/Month · All rights reserved</p>
+    <p style="margin-top: 8px;">Questions? <a href="/cdn-cgi/l/email-protection#19717c7575765960766c6b7d7674787077377a7674"><span class="__cf_email__" data-cfemail="e58d8089898aa59c8a9097818a88848c8bcb868a88">[email&#160;protected]</span></a></p>
+    <p style="margin-top: 8px; font-size: 11px; color: #475569;">Results are not typical. Income figures shown are examples based on real cleaning agency economics. Your results will depend on your effort, market, and execution.</p>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div>
+      <div class="sticky-bar-text">From Zero to $10K/Month</div>
+      <div style="font-size: 13px; color: var(--muted);">The Complete Cleaning Business Playbook</div>
+    </div>
+    <div class="sticky-bar-price">$97</div>
+    <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" class="btn-primary">Get Instant Access →</a>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Sticky bar on scroll
+    const sticky = document.getElementById('stickyBar');
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600 && !shown) {
+        sticky.classList.add('visible');
+        shown = true;
+      } else if (window.scrollY < 200 && shown) {
+        sticky.classList.remove('visible');
+        shown = false;
+      }
+    });
+
+
+    // Scroll-triggered reveals for below-fold sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('revealed');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Animated number counters in stats
+    function animateCount(el) {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dur = 1200;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val = Math.floor(ease * target);
+        el.textContent = prefix + (target >= 1000 ? val.toLocaleString() : val) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = prefix + target.toLocaleString() + suffix;
+      }
+      requestAnimationFrame(step);
+    }
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+         
