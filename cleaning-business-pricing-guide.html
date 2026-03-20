@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:    #0e1c30;
+      --navy2:   #162540;
+      --navy3:   #1e3356;
+      --teal:    #0d9488;
+      --teal-lt: #14b8a6;
+      --gold:    #f59e0b;
+      --gold-lt: #fbbf24;
+      --white:   #ffffff;
+      --muted:   #94a3b8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--navy); color: var(--white); overflow-x: hidden; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: rgba(14,28,48,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 17px; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px;
+      transition: opacity 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* ── Footer ── */
+    footer {
+      background: #07111f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+    }
+    footer a { color: var(--teal-lt); }
+
+    /* ── Shared blog card styles ── */
+    .blog-card {
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .blog-card:hover { border-color: rgba(13,148,136,0.4); transform: translateY(-3px); }
+    .blog-card-body { padding: 24px; }
+    .blog-tag {
+      display: inline-block;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal-lt); margin-bottom: 12px;
+    }
+    .blog-tag.gold {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.25);
+      color: var(--gold);
+    }
+    .blog-card-title {
+      font-family: var(--serif); font-size: 20px; font-weight: 700;
+      color: var(--white); line-height: 1.3; margin-bottom: 10px;
+    }
+    .blog-card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .blog-card-meta { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 8px; }
+    .blog-card-meta span { color: var(--teal-lt); }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: var(--teal-lt);
+      margin-top: 14px; transition: gap 0.15s;
+    }
+    .blog-card:hover .blog-read-more { gap: 10px; }
+
+    /* ── Article styles ── */
+    .article-hero {
+      background: var(--navy2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 72px 0 56px;
+    }
+    .article-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px;
+    }
+    .article-title {
+      font-family: var(--serif); font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--white); margin-bottom: 18px; max-width: 720px;
+    }
+    .article-subtitle {
+      font-size: 18px; color: var(--muted); line-height: 1.65;
+      max-width: 620px; margin-bottom: 24px;
+    }
+    .article-meta {
+      font-size: 13px; color: #475569;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #374151; }
+
+    .article-body { padding: 56px 0 72px; }
+    .article-body .container { max-width: 720px; }
+    .article-body h2 {
+      font-family: var(--serif); font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700; color: var(--white); margin: 48px 0 16px;
+      letter-spacing: -0.015em; line-height: 1.2;
+    }
+    .article-body h3 {
+      font-size: 18px; font-weight: 700; color: var(--white);
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 16px; color: #94a3b8; line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .article-body p strong { color: var(--white); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0; padding-left: 0;
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .article-body li {
+      font-size: 16px; color: #94a3b8; line-height: 1.7;
+      padding-left: 24px; position: relative;
+    }
+    .article-body ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--teal-lt); font-weight: 700;
+    }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li { counter-increment: item; }
+    .article-body ol li::before {
+      content: counter(item) '.'; position: absolute; left: 0;
+      color: var(--gold); font-weight: 700; font-family: var(--mono); font-size: 14px;
+    }
+    .callout {
+      background: rgba(13,148,136,0.08);
+      border-left: 3px solid var(--teal-lt);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px; margin: 28px 0;
+    }
+    .callout p { color: #cbd5e1 !important; margin: 0; }
+    .callout strong { color: var(--teal-lt) !important; }
+    .callout-gold {
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid var(--gold);
+    }
+    .callout-gold p { color: #cbd5e1 !important; }
+    .callout-gold strong { color: var(--gold) !important; }
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 15px;
+    }
+    .data-table th {
+      background: var(--navy3); color: var(--teal-lt);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 12px 16px; text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .data-table td {
+      padding: 12px 16px; color: #94a3b8;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--white); font-weight: 600; }
+    .data-table td.gold { color: var(--gold); font-family: var(--mono); font-weight: 700; }
+    .article-cta {
+      background: linear-gradient(180deg, var(--navy2) 0%, #091729 100%);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 16px; padding: 40px 36px; margin: 48px 0;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .article-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(13,148,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta h3 {
+      font-family: var(--serif); font-size: 24px; font-weight: 700;
+      color: var(--white); margin: 0 0 10px; position: relative;
+    }
+    .article-cta p {
+      color: var(--muted); font-size: 15px; margin: 0 0 24px; position: relative;
+    }
+    .article-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      font-weight: 700; font-size: 16px; padding: 16px 36px;
+      border-radius: 8px; position: relative;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .article-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.4); }
+
+    /* ── Related posts ── */
+    .related { background: var(--navy2); border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 0; }
+    .related h2 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 48px 0 40px; }
+      .article-body { padding: 40px 0 56px; }
+      .article-cta { padding: 28px 22px; }
+      .article-cta a { width: 100%; justify-content: center; }
+      .related-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+  <meta name="description" content="Real pricing ranges for residential cleaning services in 2026 — standard cleans, deep cleans, move-in/out, and add-ons. Stop undercharging." />
+  <title>How Much to Charge for Cleaning Services: 2026 Pricing Guide</title>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        Cleaning Agency Playbook
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/blog.html" class="active">Blog</a>
+        <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="article-hero">
+    <div class="container">
+      <p class="article-label">Pricing</p>
+      <h1 class="article-title">How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026</h1>
+      <p class="article-subtitle">The actual market rates for residential cleaning so you never underprice again — broken down by service type, home size, and add-on.</p>
+      <div class="article-meta">
+        <span>5 min read</span>
+        <div class="article-meta-dot"></div>
+        <span>Cleaning Agency Playbook</span>
+        <div class="article-meta-dot"></div>
+        <span style="color:var(--gold);">Pricing</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-body">
+    <div class="container">
+
+      <p>Underpricing is the single biggest mistake new cleaning business owners make. It's not just about leaving money on the table — it actively damages the business. Low prices attract clients who are difficult to please, expect extras, and complain about everything. They also leave almost no margin to pay reliable cleaners, which means you end up doing the work yourself.</p>
+      <p>This guide gives you real market rates based on what professional cleaning agencies actually charge in 2026. Use these as your floor, not your ceiling.</p>
+
+      <h2>Why Most New Owners Underprice</h2>
+      <p>The most common reason is simple: they search for competitors online, find a mix of solo operators and agencies charging wildly different amounts, and anchor to the low end out of fear. They think lower prices will help them win clients faster.</p>
+      <p>The opposite is true. <strong>Clients who choose based on price alone are the hardest clients to retain.</strong> They switch providers for a $10 difference. They complain constantly. They write bad reviews when you raise your rates.</p>
+      <p>Clients who choose based on trust, reliability, and professionalism stay for years and refer their friends. These clients don't care if you charge $140 or $160. They care that you show up, do quality work, and communicate well.</p>
+
+      <div class="callout">
+        <p><strong>The real question isn't "what's the lowest I can charge to get clients."</strong> It's "what's the right price for the quality of service I'm delivering?"</p>
+      </div>
+
+      <h2>Standard Cleaning Prices (2026)</h2>
+      <p>A standard clean covers all main living areas, bedrooms, bathrooms, and kitchen surfaces. It does not include interior appliances, windows, or areas requiring heavy scrubbing.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Home Size</th><th>Bedrooms</th><th>Market Range</th><th>Duration</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Small apartment</td><td>Studio–1 bed</td><td class="gold">$80–$110</td><td>1.5–2 hrs</td></tr>
+          <tr><td>Small home</td><td>2 bed / 1 bath</td><td class="gold">$110–$145</td><td>2–2.5 hrs</td></tr>
+          <tr><td>Medium home</td><td>3 bed / 2 bath</td><td class="gold">$140–$175</td><td>2.5–3.5 hrs</td></tr>
+          <tr><td>Large home</td><td>4 bed / 3 bath</td><td class="gold">$175–$230</td><td>3.5–4.5 hrs</td></tr>
+          <tr><td>Extra large</td><td>5+ bed</td><td class="gold">$220–$300+</td><td>4.5+ hrs</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Deep Cleaning Prices</h2>
+      <p>A deep clean is a comprehensive top-to-bottom service — baseboards, inside cabinets, ceiling fans, detailed bathroom scrubbing, and areas not covered in a standard clean. It takes 2–3x longer and should be priced accordingly.</p>
+      <p><strong>Deep clean pricing range: $180–$320</strong> depending on home size and condition.</p>
+      <p>Most agencies price deep cleans at 1.75–2.5x the standard clean rate for the same home. If you charge $150 for a standard clean, your deep clean should be $260–$375.</p>
+      <p>Deep cleans are often the first service a new client books before switching to regular maintenance cleans. They're also one of the highest-margin services you offer because the labor cost relative to the price is favorable.</p>
+
+      <h2>Move-In / Move-Out Cleaning Prices</h2>
+      <p>Move cleans are the most intensive service you'll offer. The property is often empty, which means every surface — including insides of every cabinet, closet, appliance, and fixture — needs to be spotless. These jobs often take a full day for a two-person team.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Property Size</th><th>Market Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1–2 bed apartment</td><td class="gold">$180–$260</td></tr>
+          <tr><td>3 bed house</td><td class="gold">$250–$340</td></tr>
+          <tr><td>4 bed house</td><td class="gold">$320–$420</td></tr>
+          <tr><td>5+ bed / luxury</td><td class="gold">$400–$600+</td></tr>
+        </tbody>
+      </table>
+
+      <p>Move cleans are also in high demand year-round because people are always moving. Real estate agents are an excellent referral source — one agent who likes your work can send you 2–4 move cleans per month consistently.</p>
+
+      <h2>Add-On Pricing</h2>
+      <p>Add-ons are where margin expands significantly. A client who books a $150 standard clean and adds oven + fridge cleaning is now a $230 ticket. The extra 30–45 minutes of work more than covers the additional payout to your cleaner.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Add-On Service</th><th>Market Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Inside oven cleaning</td><td class="gold">$35–$55</td></tr>
+          <tr><td>Inside refrigerator</td><td class="gold">$30–$50</td></tr>
+          <tr><td>Interior windows</td><td class="gold">$40–$80</td></tr>
+          <tr><td>Laundry (wash + fold)</td><td class="gold">$30–$50</td></tr>
+          <tr><td>Garage sweep</td><td class="gold">$40–$70</td></tr>
+          <tr><td>Wall spot cleaning</td><td class="gold">$30–$50</td></tr>
+          <tr><td>Green/eco products</td><td class="gold">$15–$25 upcharge</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Recurring vs. One-Time Pricing</h2>
+      <p>Recurring clients — weekly, bi-weekly, or monthly — are the foundation of a stable cleaning agency. They're predictable revenue and they're far cheaper to keep than to acquire.</p>
+      <p>It's standard practice to offer a small discount for recurring bookings:</p>
+      <ul>
+        <li><strong>Weekly:</strong> 15–20% off the standard rate</li>
+        <li><strong>Bi-weekly:</strong> 10–15% off the standard rate</li>
+        <li><strong>Monthly:</strong> 5–8% off the standard rate</li>
+      </ul>
+      <p>The math still works in your favor because recurring clients require zero acquisition cost. The discount is not a loss — it's a retention investment.</p>
+
+      <h2>How to Quote Without Losing the Client</h2>
+      <p>The biggest pricing mistake after setting rates too low is being apologetic when quoting. If you say "I know it might seem a lot, but..." you've already signaled that the price isn't worth it.</p>
+      <p>Quote confidently and briefly. State the price, the service it covers, and how to book. If they push back, don't drop your price — offer a smaller scope instead (skip the oven, do a standard instead of a deep clean).</p>
+      <p>A client who haggles before booking will be a problem client throughout the relationship. Clients who book at your stated price are your best customers.</p>
+
+      <div class="callout callout-gold">
+        <p><strong>The pricing rule of thumb:</strong> If fewer than 15–20% of people you quote are pushing back on price, you're charging too little. Some resistance is healthy and expected. Zero resistance usually means you're leaving money on the table.</p>
+      </div>
+
+      <div class="article-cta">
+        <h3>Get the Full Pricing Strategy Table</h3>
+        <p>The complete pricing guide — with real ranges for every service, market, and home size — is inside the playbook. One price, everything included.</p>
+        <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank">Get the Playbook — $97 →</a>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related">
+    <div class="container">
+      <h2>Keep Reading</h2>
+      <div class="related-grid">
+        <a href="/blog/how-to-start-cleaning-business.html" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-tag">Getting Started</span>
+            <h3 class="blog-card-title">How to Start a Cleaning Business With No Experience</h3>
+            <p class="blog-card-excerpt">The complete step-by-step guide to launching your agency from zero.</p>
+            <div class="blog-read-more">Read article →</div>
+          </div>
+        </a>
+        <a href="/blog/how-to-hire-cleaners.html" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-tag" style="background:rgba(244,63,94,0.1);border-color:rgba(244,63,94,0.25);color:#fb7185;">Hiring</span>
+            <h3 class="blog-card-title">How to Find and Hire Reliable Cleaners</h3>
+            <p class="blog-card-excerpt">The full system — job ads, screening calls, and red flags to avoid.</p>
+            <div class="blog-read-more">Read article →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 From Zero to $10K/Month · All rights reserved ·
+    <a href="/cdn-cgi/l/email-protection#9cf4f9f0f0f3dcfff0f9fdf2f5f2fbfdfbf9f2ffe5ecf0fde5fef3f3f7b2fff3f1">Questions? Contact us</a></p>
+    <p style="margin-top:8px; font-size:11px;">Results are not typical. Income figures shown are examples based on real cle

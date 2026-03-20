@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:    #0e1c30;
+      --navy2:   #162540;
+      --navy3:   #1e3356;
+      --teal:    #0d9488;
+      --teal-lt: #14b8a6;
+      --gold:    #f59e0b;
+      --gold-lt: #fbbf24;
+      --white:   #ffffff;
+      --muted:   #94a3b8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--navy); color: var(--white); overflow-x: hidden; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: rgba(14,28,48,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 17px; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px;
+      transition: opacity 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* ── Footer ── */
+    footer {
+      background: #07111f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+    }
+    footer a { color: var(--teal-lt); }
+
+    /* ── Shared blog card styles ── */
+    .blog-card {
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .blog-card:hover { border-color: rgba(13,148,136,0.4); transform: translateY(-3px); }
+    .blog-card-body { padding: 24px; }
+    .blog-tag {
+      display: inline-block;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal-lt); margin-bottom: 12px;
+    }
+    .blog-tag.gold {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.25);
+      color: var(--gold);
+    }
+    .blog-card-title {
+      font-family: var(--serif); font-size: 20px; font-weight: 700;
+      color: var(--white); line-height: 1.3; margin-bottom: 10px;
+    }
+    .blog-card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .blog-card-meta { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 8px; }
+    .blog-card-meta span { color: var(--teal-lt); }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: var(--teal-lt);
+      margin-top: 14px; transition: gap 0.15s;
+    }
+    .blog-card:hover .blog-read-more { gap: 10px; }
+
+    /* ── Article styles ── */
+    .article-hero {
+      background: var(--navy2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 72px 0 56px;
+    }
+    .article-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px;
+    }
+    .article-title {
+      font-family: var(--serif); font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--white); margin-bottom: 18px; max-width: 720px;
+    }
+    .article-subtitle {
+      font-size: 18px; color: var(--muted); line-height: 1.65;
+      max-width: 620px; margin-bottom: 24px;
+    }
+    .article-meta {
+      font-size: 13px; color: #475569;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #374151; }
+
+    .article-body { padding: 56px 0 72px; }
+    .article-body .container { max-width: 720px; }
+    .article-body h2 {
+      font-family: var(--serif); font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700; color: var(--white); margin: 48px 0 16px;
+      letter-spacing: -0.015em; line-height: 1.2;
+    }
+    .article-body h3 {
+      font-size: 18px; font-weight: 700; color: var(--white);
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 16px; color: #94a3b8; line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .article-body p strong { color: var(--white); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0; padding-left: 0;
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .article-body li {
+      font-size: 16px; color: #94a3b8; line-height: 1.7;
+      padding-left: 24px; position: relative;
+    }
+    .article-body ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--teal-lt); font-weight: 700;
+    }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li { counter-increment: item; }
+    .article-body ol li::before {
+      content: counter(item) '.'; position: absolute; left: 0;
+      color: var(--gold); font-weight: 700; font-family: var(--mono); font-size: 14px;
+    }
+    .callout {
+      background: rgba(13,148,136,0.08);
+      border-left: 3px solid var(--teal-lt);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px; margin: 28px 0;
+    }
+    .callout p { color: #cbd5e1 !important; margin: 0; }
+    .callout strong { color: var(--teal-lt) !important; }
+    .callout-gold {
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid var(--gold);
+    }
+    .callout-gold p { color: #cbd5e1 !important; }
+    .callout-gold strong { color: var(--gold) !important; }
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 15px;
+    }
+    .data-table th {
+      background: var(--navy3); color: var(--teal-lt);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 12px 16px; text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .data-table td {
+      padding: 12px 16px; color: #94a3b8;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--white); font-weight: 600; }
+    .data-table td.gold { color: var(--gold); font-family: var(--mono); font-weight: 700; }
+    .article-cta {
+      background: linear-gradient(180deg, var(--navy2) 0%, #091729 100%);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 16px; padding: 40px 36px; margin: 48px 0;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .article-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(13,148,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta h3 {
+      font-family: var(--serif); font-size: 24px; font-weight: 700;
+      color: var(--white); margin: 0 0 10px; position: relative;
+    }
+    .article-cta p {
+      color: var(--muted); font-size: 15px; margin: 0 0 24px; position: relative;
+    }
+    .article-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      font-weight: 700; font-size: 16px; padding: 16px 36px;
+      border-radius: 8px; position: relative;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .article-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.4); }
+
+    /* ── Related posts ── */
+    .related { background: var(--navy2); border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 0; }
+    .related h2 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 48px 0 40px; }
+      .article-body { padding: 40px 0 56px; }
+      .article-cta { padding: 28px 22px; }
+      .article-cta a { width: 100%; justify-content: center; }
+      .related-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+  <meta name="description" content="Learn how to find, screen, and hire reliable cleaners for your cleaning agency. Includes where to post, what to ask, and the red flags that predict no-shows." />
+  <title>How to Find and Hire Reliable Cleaners: The Complete System</title>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        Cleaning Agency Playbook
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/blog.html" class="active">Blog</a>
+        <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="article-hero">
+    <div class="container">
+      <p class="article-label">Hiring</p>
+      <h1 class="article-title">How to Find and Hire Reliable Cleaners: The Complete System</h1>
+      <p class="article-subtitle">Where to post your job ad, how to run a phone screen, what to pay, and the red flags that predict ghosting and no-shows before you make the hire.</p>
+      <div class="article-meta">
+        <span>7 min read</span>
+        <div class="article-meta-dot"></div>
+        <span>Cleaning Agency Playbook</span>
+        <div class="article-meta-dot"></div>
+        <span style="color:#fb7185;">Hiring</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-body">
+    <div class="container">
+
+      <p>Finding reliable cleaners is the hardest part of building a cleaning agency. Anyone who tells you otherwise hasn't actually done it. Your first few hires will not be perfect — that's not failure, that's just the process. What makes the difference is having a system that filters out the worst candidates before they cost you clients and reviews.</p>
+      <p>This guide covers the full hiring process: where to find candidates, how to write a job ad that attracts reliable people, the phone screen questions that predict reliability, and the red flags that should end the process immediately.</p>
+
+      <h2>Where to Find Cleaners</h2>
+      <p>Post on multiple platforms simultaneously. The more applications you receive, the more selective you can be. Aim for at least 10–15 applicants before you start screening.</p>
+      <ul>
+        <li><strong>Indeed</strong> — the highest volume platform for hourly workers. A $30–50 sponsored posting budget gets strong results. This should be your primary channel.</li>
+        <li><strong>Facebook Jobs</strong> — completely free, reaches local candidates well. Many reliable cleaners prefer Facebook over job boards because it feels less formal.</li>
+        <li><strong>ZipRecruiter</strong> — broader reach than Indeed in some markets. Worth testing if Indeed volume is low.</li>
+        <li><strong>Nextdoor</strong> — underused and underrated. Posts reach hyper-local candidates who often have existing cleaning experience in the neighborhood.</li>
+        <li><strong>Craigslist</strong> — the quality is inconsistent, but volume is high. Use it as a secondary channel, not primary.</li>
+      </ul>
+
+      <h2>How to Write a Job Ad That Works</h2>
+      <p>Most cleaning job ads fail because they lead with requirements. Reliable candidates — people with options — scan job ads in 15 seconds. If the first thing they see is a list of demands, they move on.</p>
+      <p><strong>Lead with pay and flexibility.</strong> These are the two things candidates care about most.</p>
+
+      <div class="callout">
+        <p><strong>Effective opening line:</strong> "Flexible cleaning positions available — $18–22/hour, set your own schedule, choose your own hours. Immediate start."</p>
+      </div>
+
+      <p>After the opening, keep the ad short:</p>
+      <ul>
+        <li>What the job involves (residential home cleaning, no commercial properties)</li>
+        <li>Pay range and payment schedule (paid weekly is attractive)</li>
+        <li>Schedule flexibility — this is a major selling point</li>
+        <li>What you're looking for (reliability and a positive attitude, not experience)</li>
+        <li>How to apply (respond to the ad with availability and a brief intro)</li>
+      </ul>
+      <p>Do not list 15 requirements. Do not ask for a resume. Do not make the application process complicated. The best candidates are often employed elsewhere and won't jump through hoops for an ad they found in 30 seconds of scrolling.</p>
+
+      <h2>The Phone Screen: 5 Minutes That Predict Everything</h2>
+      <p>Before you invest time in an in-person meeting or a paid test clean, run every applicant through a brief phone screen. This call has one purpose: to filter out people who will waste your time.</p>
+      <p>Schedule the call for a specific time and note whether they answer. Candidates who don't answer a scheduled call and don't apologize or reschedule are giving you critical information about how reliable they'll be when a client is waiting.</p>
+      <p>The questions to ask:</p>
+      <ol>
+        <li><strong>"Tell me a bit about your cleaning experience."</strong> — You're not looking for a specific answer. You're listening for how they communicate. Are they clear? Do they ramble? Do they seem engaged or distracted?</li>
+        <li><strong>"What does your availability look like — which days and times work best?"</strong> — Reliability requires fit. If their availability doesn't match your booking patterns, there's no point continuing.</li>
+        <li><strong>"Have you ever had a job where something went wrong with a client or a task? How did you handle it?"</strong> — This reveals how they respond to problems. You want someone who owns their mistakes, communicates proactively, and fixes issues without drama.</li>
+        <li><strong>"Do you have reliable transportation?"</strong> — A simple yes. Follow up with: "Have you had any issues getting to jobs in the past?" Vague answers here are a yellow flag.</li>
+        <li><strong>"If we were to move forward, when could you start?"</strong> — Immediately or within a week is ideal. "I'd have to figure some things out" usually means there are complications.</li>
+      </ol>
+
+      <h2>What to Pay Your Cleaners</h2>
+      <p>Pay your cleaners fairly. Underpaying cleaners leads to high turnover, low morale, and corners being cut on client jobs. The cost of replacing a cleaner — re-hiring, re-training, and the reputation risk of an unreliable service period — is far higher than the cost of a competitive wage.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Market Type</th><th>Hourly Rate Range</th><th>Your Target Margin</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Low cost-of-living market</td><td class="gold">$14–$17/hr</td><td>45–50%</td></tr>
+          <tr><td>Mid cost-of-living market</td><td class="gold">$17–$21/hr</td><td>42–48%</td></tr>
+          <tr><td>High cost-of-living market</td><td class="gold">$21–$26/hr</td><td>40–45%</td></tr>
+        </tbody>
+      </table>
+
+      <p>Most cleaning agencies pay cleaners 50–55% of the job ticket. On a $150 clean, the cleaner earns $75–82.50. The remaining $67.50–75 covers your costs and profit. On higher-ticket jobs like deep cleans and move-outs, the ratio is even more favorable.</p>
+
+      <h2>The Paid Test Clean</h2>
+      <p>Before adding any cleaner to your active roster, send them on a paid test clean. This is a real job at a real client's home — but at a discounted rate to offset the quality risk. You pay the cleaner their normal hourly rate regardless of how it goes.</p>
+      <p>What you're evaluating:</p>
+      <ul>
+        <li><strong>Punctuality</strong> — did they arrive on time? Even 5 minutes late without a heads-up is a data point.</li>
+        <li><strong>Communication</strong> — did they text you when they arrived? When they finished? If something looked different than expected?</li>
+        <li><strong>Quality of work</strong> — do a quick walkthrough after the clean. Look at baseboards, bathroom fixtures, and kitchen surfaces. These are the areas that separate thorough cleaners from rushed ones.</li>
+        <li><strong>Client interaction</strong> — if the client was home, did the cleaner interact professionally?</li>
+      </ul>
+      <p>Pass the test clean? Welcome them to the roster and start booking them on regular jobs. Fail? Thank them for their time and move on to the next candidate. It costs you a discounted clean — not a damaged client relationship.</p>
+
+      <h2>Red Flags That End the Process</h2>
+      <p>Trust these signals. Ignoring red flags early always costs more than cutting the process short.</p>
+      <ul>
+        <li>Doesn't show up to the scheduled phone screen without rescheduling</li>
+        <li>Vague or inconsistent answers about availability</li>
+        <li>Blames previous employers for everything that went wrong in past jobs</li>
+        <li>Asks to be paid in cash only</li>
+        <li>Can't give a single example of a time they handled a problem professionally</li>
+        <li>Arrives late to the test clean without communicating</li>
+        <li>Doesn't send a completion message after finishing the test clean</li>
+      </ul>
+
+      <div class="callout callout-gold">
+        <p><strong>The reliability test that works better than any interview question:</strong> How fast do they respond to your messages? Someone who responds within 30 minutes during the hiring process is showing you exactly how they'll behave on the job. Someone who takes 6 hours to reply to a simple availability question will take 6 hours to tell you they can't make a booking.</p>
+      </div>
+
+      <h2>Building a Bench</h2>
+      <p>Even after you've found reliable cleaners, keep hiring. Your goal is always to have more capacity than you currently need. When a cleaner calls in sick, cancels, or leaves, you need to fill that booking immediately — not spend three days scrambling to find someone.</p>
+      <p>A healthy cleaning agency runs 1–2 backup cleaners per active cleaner on the roster. These backup cleaners pick up overflow bookings, cover absences, and get promoted to primary status when openings occur.</p>
+
+      <div class="article-cta">
+        <h3>Get the Word-for-Word Job Ad Template</h3>
+        <p>The exact hiring ad that attracts reliable cleaners — ready to paste into Indeed, Facebook, and ZipRecruiter — plus the full phone screening script and red flag checklist. All inside the playbook.</p>
+        <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank">Get the Playbook — $97 →</a>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related">
+    <div class="container">
+      <h2>Keep Reading</h2>
+      <div class="related-grid">
+        <a href="/blog/how-to-start-cleaning-business.html" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-tag">Getting Started</span>
+            <h3 class="blog-card-title">How to Start a Cleaning Business With No Experience</h3>
+            <p class="blog-card-excerpt">The complete step-by-step guide to launching your agency from zero.</p>
+            <div class="blog-read-more">Read article →</div>
+          </div>
+        </a>
+        <a href="/blog/cleaning-business-pricing-guide.html" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-tag gold">Pricing</span>
+            <h3 class="blog-card-title">How Much to Charge for Cleaning Services in 2026</h3>
+            <p class="blog-card-excerpt">Real market rates for every service type so you stop leaving money on the table.</p>
+            <div class="blog-read-more">Read article →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 From Zero to $10K/Month · All rights reserved ·
+    <a href="/cdn-cgi/l/email-protection#bbd3ded7d7d4fbd8d7dedad5d2d5dcdadcded5d8c2cbd7dac2d9d4d4d095d8d4d6">Questions? Contact us</a></p>
+    <p style="margin-top:8px; font-size:11px;">Results are not typical. Income figures shown are examples based on real cle
