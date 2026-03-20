@@ -1125,9 +1125,55 @@
         white-space: nowrap !important;
       }
     }
+
+    /* ─── SITE NAV ───────────────────────────────────────── */
+    .site-nav {
+      background: rgba(14,28,48,0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 200;
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 16px; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 9px;
+      text-decoration: none;
+    }
+    .nav-logo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-lt); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .nav-cta {
+      background: var(--gold); color: var(--navy) !important;
+      font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 6px;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .site-nav-inner { justify-content: center; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- SITE NAV -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        Cleaning Agency Playbook
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="topbar">
