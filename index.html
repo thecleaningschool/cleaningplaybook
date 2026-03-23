@@ -1154,7 +1154,24 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .site-nav-inner { justify-content: center; }
+      .site-nav-inner { justify-content: space-between; }
+      .nav-logo { font-size: 14px; }
+      /* Show just the blog link and CTA on mobile */
+      .nav-mobile-blog {
+        display: flex !important;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-mobile-blog a {
+        font-size: 12px; font-weight: 700;
+        color: var(--muted); text-decoration: none;
+      }
+      .nav-mobile-blog .nav-cta {
+        background: var(--gold); color: var(--navy) !important;
+        font-size: 11px; font-weight: 700;
+        padding: 7px 12px; border-radius: 6px;
+        white-space: nowrap;
+      }
     }
   </style>
 </head>
@@ -1171,6 +1188,10 @@
         <a href="/index.html">Home</a>
         <a href="/blog.html">Blog</a>
         <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+      <div class="nav-mobile-blog" style="display:none;">
+        <a href="/blog.html">Blog</a>
+        <a href="/index.html#pricing" class="nav-cta">Get Playbook</a>
       </div>
     </div>
   </nav>
@@ -1189,15 +1210,15 @@
         <!-- LEFT: Copy -->
         <div class="fade-up" style="text-align:left;">
           <div class="hero-eyebrow" style="margin-bottom: 22px; display:inline-flex; white-space:nowrap;">
-            Real business. Real systems. Real numbers.
+            The Cleaning Agency Operating System
           </div>
           <h1 style="margin-bottom: 18px; font-size: clamp(34px, 5vw, 64px); text-align:left;">
             From Zero to
             <em>$10K/Month</em>
           </h1>
           <p class="hero-sub" style="margin: 0 0 30px; max-width: 100%; text-align:left;">
-            Hire cleaners, book clients, and run a real agency —
-            <strong>without touching a single mop. Ever.</strong>
+            Every script, template, and system a cleaning agency runs on —
+            <strong>ready to use the day you download it.</strong>
           </p>
           <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" class="btn-primary" style="font-size:18px; padding:20px 40px; background:var(--gold); color:var(--navy); box-shadow:0 6px 28px rgba(245,158,11,0.45); text-decoration:none;">
             Get Instant Access — $97
@@ -1220,7 +1241,7 @@
             </div>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.07);">
-            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> Instant download</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> Read today, launch this week</span>
             <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> PDF + .pptx</span>
             <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);"><span style="color:var(--teal-lt);">✓</span> Works in any city</span>
           </div>
@@ -1318,7 +1339,7 @@
     <div class="container">
       <p class="section-label">The problem</p>
       <h2 class="section-title">Most people who try to start<br/><em>never get their first booking.</em></h2>
-      <p class="section-body">Not because cleaning is hard or the market is bad. Because nobody ever gave them the operating manual — so they figure it out by trial and error, or they quit.</p>
+      <p class="section-body">Not because the market is bad. Because they spent weeks watching YouTube videos and reading Reddit threads — and still had no phone script, no job ad, no pricing table, and no idea what to do first. Information isn't the problem. A system is.</p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-icon icon-hiring"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -1350,7 +1371,7 @@
         </div>
       </div>
       <div class="problem-close">
-        <strong>This course solves all four.</strong> Every script, template, checklist, and system you need — built by someone who actually runs a cleaning agency, not a content creator who read about one.
+        <strong>This playbook solves all four — with assets you use immediately.</strong> Not videos to watch. Not frameworks to adapt. A phone script you read from on your first call. A job ad you paste into Indeed today. A pricing table with real numbers. Built by someone currently running a cleaning agency, not a content creator who researched one.
       </div>
     </div>
   </section>
@@ -1546,8 +1567,8 @@
   <!-- WHAT'S INSIDE LIST -->
   <section class="inside" scroll-reveal>
     <div class="container">
-      <p class="section-label">Everything you get</p>
-      <h2 class="section-title">The complete <em>package.</em></h2>
+      <p class="section-label">What's inside</p>
+      <h2 class="section-title">The complete <em>operating system.</em></h2>
       <div class="inside-list">
         <div class="inside-item">
           <div class="inside-icon">📐</div>
@@ -1764,21 +1785,21 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
         <div>
           <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:14px;">Why this is different</p>
-          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:700;line-height:1.12;letter-spacing:-0.02em;margin-bottom:18px;">Built from a <em style="font-style:italic;color:var(--gold);">real agency,</em><br/>not a YouTube channel.</h2>
-          <p style="font-size:15px;color:#94a3b8;line-height:1.75;max-width:440px;">The scripts, pricing tables, hiring ad, and daily checklists in this playbook are what a real cleaning agency runs on every day — not assembled from other courses or invented for content.</p>
+          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:700;line-height:1.12;letter-spacing:-0.02em;margin-bottom:18px;">Not a course.<br/><em style="font-style:italic;color:var(--gold);">An operating system.</em></h2>
+          <p style="font-size:15px;color:#94a3b8;line-height:1.75;max-width:440px;">Most cleaning business courses give you hours of video content explaining what to do. This gives you the actual assets — the phone script, the job ad, the pricing table — so you can start working immediately. Read today. Launch this week.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:20px;">
           <div style="display:flex;gap:16px;align-items:flex-start;">
             <div style="width:40px;height:40px;border-radius:8px;background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📋</div>
-            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Templates you use today, not frameworks</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The job ad, call script, and follow-up email are ready to paste — not starting points to "adapt."</div></div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Assets, not lessons</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The job ad, call script, and follow-up email are ready to paste. No adapting, no interpreting — open and use.</div></div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
             <div style="width:40px;height:40px;border-radius:8px;background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">💰</div>
-            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Real pricing from a real market</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The pricing table uses actual ranges — not "research your competitors." You know exactly what to quote.</div></div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Pulled from a currently-running agency</div><div style="font-size:13px;color:#64748b;line-height:1.6;">The pricing table, hiring ad, and scripts are live documents — not historical examples from years ago.</div></div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
             <div style="width:40px;height:40px;border-radius:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📈</div>
-            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">A path, not just information</div><div style="font-size:13px;color:#64748b;line-height:1.6;">Phase-by-phase roadmap with specific actions at each milestone — you always know the next move.</div></div>
+            <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Grounded income expectations</div><div style="font-size:13px;color:#64748b;line-height:1.6;">No income hype. The revenue math is based on real cleaning economics — you can verify every number yourself.</div></div>
           </div>
         </div>
       </div>
@@ -1798,21 +1819,21 @@
         <!-- Bio -->
         <div>
           <p style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-lt); margin-bottom:12px;">Who built this</p>
-          <h2 style="font-family:var(--serif); font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:16px; color:var(--white);">This playbook runs a real cleaning agency — not a course business.</h2>
-          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:20px;">I built and operate a cleaning agency that reached $10K/month. Every template, script, and checklist in this course is what I actually use — not theory assembled from research or adapted from someone else's content.</p>
-          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:24px;">I made every mistake in the book in the early days — wrong pricing, unreliable cleaners, calls I froze up on, customers I lost. This course exists so you skip all of that.</p>
+          <h2 style="font-family:var(--serif); font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:16px; color:var(--white);">Built from a cleaning agency that's operating right now.</h2>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:20px;">This isn't something I built years ago and turned into a course. I run a cleaning agency today. The phone script in this playbook is the one my agency uses on incoming calls. The job ad template is the one I post when I hire. The pricing table reflects what I actually charge.</p>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.75; margin-bottom:24px;">I built this after watching people spend months on YouTube, Reddit, and generic business courses — and still not knowing what to say on their first client call. Everything I wished existed when I started is in here.</p>
           <div style="display:flex; flex-wrap:wrap; gap:20px;">
             <div style="display:flex; align-items:center; gap:8px;">
               <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
-              <span style="font-size:13px; color:var(--muted);">Active agency owner</span>
+              <span style="font-size:13px; color:var(--muted);">Currently operating — not retired from it</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
-              <span style="font-size:13px; color:var(--muted);">$10K+/month reached</span>
+              <span style="font-size:13px; color:var(--muted);">Templates pulled directly from active operations</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <div style="width:8px; height:8px; border-radius:50%; background:#14b8a6;"></div>
-              <span style="font-size:13px; color:var(--muted);">340+ students</span>
+              <span style="font-size:13px; color:var(--muted);">340+ operators already using this system</span>
             </div>
           </div>
         </div>
@@ -1835,6 +1856,7 @@
           <div class="price-was">Regular price: $147</div>
           <div class="price-now"><sup>$</sup>97</div>
           <div class="price-sub">One-time payment · Instant download · Keep forever</div>
+          <div style="margin-top:14px; padding:12px 16px; background:rgba(245,158,11,0.07); border:1px solid rgba(245,158,11,0.2); border-radius:8px; font-size:13px; color:#94a3b8; line-height:1.6;">A single session with a business coach runs <strong style="color:var(--white);">$300–500</strong>. This covers everything they'd tell you — plus the actual scripts and templates to execute it — for <strong style="color:var(--gold);">$97</strong>.</div>
 
         </div>
         <div class="pricing-includes">
@@ -1973,9 +1995,9 @@
     <div class="container" style="position:relative; text-align:center;">
       <div style="display:inline-block;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.22);border-radius:100px;padding:6px 20px;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;">Join 340+ Agency Owners</div>
       <h2 style="font-size:clamp(30px,5vw,56px); margin-bottom:16px;">
-        <span class="final-cta-headline">The only thing between you and <em>$10K/month</em> is a decision.</span>
+        <span class="final-cta-headline">Every operator who's built this started with the same assets<br/>you're about to download.</span>
       </h2>
-      <p style="font-size:18px; color:#94a3b8; max-width:520px; margin: 0 auto 44px; line-height:1.7;">340+ people have already started. Every script, every template, every system — it's all inside, ready to use tonight.</p>
+      <p style="font-size:18px; color:#94a3b8; max-width:520px; margin: 0 auto 44px; line-height:1.7;">The phone script, the job ad, the pricing table, the roadmap. Everything is in there, ready to use the day you download it. No videos to watch first. No frameworks to interpret.</p>
       <a href="https://leonardo473.gumroad.com/l/cvswjc" target="_blank" class="final-bottom-btn" style="display:inline-flex; align-items:center; gap:12px; background:var(--gold); color:var(--navy); font-family:var(--sans); font-size:20px; font-weight:800; padding:22px 56px; border-radius:8px; text-decoration:none; box-shadow:0 6px 32px rgba(245,158,11,0.45);">
         Yes, I Want This — $97 →
       </a>
