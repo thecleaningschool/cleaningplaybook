@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" /></noscript>
+  <title>About — Cleaning Agency Playbook</title>
+  <meta name="description" content="The Cleaning Agency Playbook is built by an active cleaning agency operator. Every script, template, and system is pulled directly from a real agency currently in operation — not assembled from research or adapted from other courses." />
+  <link rel="canonical" href="https://cleaningagencyplaybook.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About — Cleaning Agency Playbook" />
+  <meta property="og:description" content="Built by an active cleaning agency operator. Every asset in the playbook is pulled from a real agency currently running." />
+  <meta property="og:url" content="https://cleaningagencyplaybook.com/about.html" />
+  <meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About \u2014 Cleaning Agency Playbook",
+  "url": "https://cleaningagencyplaybook.com/about.html",
+  "description": "The Cleaning Agency Playbook was built by an active cleaning agency operator. Every template and system in the playbook is pulled directly from a real agency currently in operation.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cleaning Agency Playbook",
+    "url": "https://cleaningagencyplaybook.com",
+    "foundingDate": "2024",
+    "description": "Operating systems and templates for starting and scaling residential cleaning agencies.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@cleaningagencyplaybook.com",
+      "contactType": "customer support"
+    }
+  }
+}
+  </script>
+  <style>
+    :root {
+      --navy:    #0e1c30;
+      --navy2:   #162540;
+      --navy3:   #1e3356;
+      --teal:    #0d9488;
+      --teal-lt: #14b8a6;
+      --gold:    #f59e0b;
+      --gold-lt: #fbbf24;
+      --white:   #ffffff;
+      --muted:   #94a3b8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--navy); color: var(--white); overflow-x: hidden; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: rgba(14,28,48,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 17px; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px;
+      transition: opacity 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* ── Footer ── */
+    footer {
+      background: #07111f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+    }
+    footer a { color: var(--teal-lt); }
+
+    /* ── Shared blog card styles ── */
+    .blog-card {
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .blog-card:hover { border-color: rgba(13,148,136,0.4); transform: translateY(-3px); }
+    .blog-card-body { padding: 24px; }
+    .blog-tag {
+      display: inline-block;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal-lt); margin-bottom: 12px;
+    }
+    .blog-tag.gold {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.25);
+      color: var(--gold);
+    }
+    .blog-card-title {
+      font-family: var(--serif); font-size: 20px; font-weight: 700;
+      color: var(--white); line-height: 1.3; margin-bottom: 10px;
+    }
+    .blog-card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .blog-card-meta { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 8px; }
+    .blog-card-meta span { color: var(--teal-lt); }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: var(--teal-lt);
+      margin-top: 14px; transition: gap 0.15s;
+    }
+    .blog-card:hover .blog-read-more { gap: 10px; }
+
+    /* ── Article styles ── */
+    .article-hero {
+      background: var(--navy2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 72px 0 56px;
+    }
+    .article-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px;
+    }
+    .article-title {
+      font-family: var(--serif); font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--white); margin-bottom: 18px; max-width: 720px;
+    }
+    .article-subtitle {
+      font-size: 18px; color: var(--muted); line-height: 1.65;
+      max-width: 620px; margin-bottom: 24px;
+    }
+    .article-meta {
+      font-size: 13px; color: #475569;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #374151; }
+
+    .article-body { padding: 56px 0 72px; }
+    .article-body .container { max-width: 720px; }
+    .article-body h2 {
+      font-family: var(--serif); font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700; color: var(--white); margin: 48px 0 16px;
+      letter-spacing: -0.015em; line-height: 1.2;
+    }
+    .article-body h3 {
+      font-size: 18px; font-weight: 700; color: var(--white);
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 16px; color: #94a3b8; line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .article-body p strong { color: var(--white); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0; padding-left: 0;
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .article-body li {
+      font-size: 16px; color: #94a3b8; line-height: 1.7;
+      padding-left: 24px; position: relative;
+    }
+    .article-body ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--teal-lt); font-weight: 700;
+    }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li { counter-increment: item; }
+    .article-body ol li::before {
+      content: counter(item) '.'; position: absolute; left: 0;
+      color: var(--gold); font-weight: 700; font-family: var(--mono); font-size: 14px;
+    }
+    .callout {
+      background: rgba(13,148,136,0.08);
+      border-left: 3px solid var(--teal-lt);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px; margin: 28px 0;
+    }
+    .callout p { color: #cbd5e1 !important; margin: 0; }
+    .callout strong { color: var(--teal-lt) !important; }
+    .callout-gold {
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid var(--gold);
+    }
+    .callout-gold p { color: #cbd5e1 !important; }
+    .callout-gold strong { color: var(--gold) !important; }
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 15px;
+    }
+    .data-table th {
+      background: var(--navy3); color: var(--teal-lt);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 12px 16px; text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .data-table td {
+      padding: 12px 16px; color: #94a3b8;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--white); font-weight: 600; }
+    .data-table td.gold { color: var(--gold); font-family: var(--mono); font-weight: 700; }
+    .article-cta {
+      background: linear-gradient(180deg, var(--navy2) 0%, #091729 100%);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 16px; padding: 40px 36px; margin: 48px 0;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .article-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(13,148,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta h3 {
+      font-family: var(--serif); font-size: 24px; font-weight: 700;
+      color: var(--white); margin: 0 0 10px; position: relative;
+    }
+    .article-cta p {
+      color: var(--muted); font-size: 15px; margin: 0 0 24px; position: relative;
+    }
+    .article-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      font-weight: 700; font-size: 16px; padding: 16px 36px;
+      border-radius: 8px; position: relative;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .article-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.4); }
+
+    /* ── Related posts ── */
+    .related { background: var(--navy2); border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 0; }
+    .related h2 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .article-hero { padding: 48px 0 40px; }
+      .article-body { padding: 40px 0 56px; }
+      .article-cta { padding: 28px 22px; }
+      .article-cta a { width: 100%; justify-content: center; }
+      .related-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        Cleaning Agency Playbook
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/about.html">About</a>
+        <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+      <div class="nav-mobile-blog" style="display:none;">
+        <a href="/blog.html">Blog</a>
+        <a href="/index.html#pricing" class="nav-cta">Get Playbook</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <p class="article-label">About this playbook</p>
+      <h1 class="article-title">Built from a cleaning agency that's operating right now.</h1>
+      <p class="article-subtitle">Not a course built from research. Not frameworks adapted from someone else's content. A system pulled directly from a real residential cleaning agency currently in operation.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT BODY -->
+  <div class="article-body">
+    <div class="container">
+
+      <h2>The origin</h2>
+      <p>This playbook exists because of a frustrating gap. When I was building my cleaning agency, there was no shortage of YouTube content, Reddit threads, and generic business courses telling me what to do. But none of them gave me what I actually needed: a word-for-word phone script I could read from on my first call, a job ad I could paste into Indeed that afternoon, or a pricing table with real numbers from real markets.</p>
+      <p>I had to build all of that myself — through trial, error, and a lot of money left on the table while I figured it out. The playbook is everything I built, packaged so you don't have to start from scratch.</p>
+
+      <h2>What makes this different from other cleaning business courses</h2>
+      <p>Most cleaning business content is created by people who either cleaned houses themselves or researched the industry from the outside. This playbook is built by someone actively running a cleaning agency as a management and operations business — not doing the cleaning, but hiring, scheduling, pricing, and scaling.</p>
+      <p>The distinction matters because the assets in this playbook aren't historical. They're live. The phone script is the one the agency uses on incoming calls today. The job ad is the one posted when a new cleaner slot opens. The pricing table reflects what the agency actually charges in current markets. When something stops working, it gets updated — and those updates flow to everyone who has purchased.</p>
+
+      <h2>What's inside the playbook</h2>
+      <p>The playbook is structured as a 26-slide operating system across 6 modules:</p>
+      <ul>
+        <li><strong>Module 1 — Business Foundations:</strong> LLC setup, tech stack, virtual phone, booking software, and a 10-step launch checklist in the right order.</li>
+        <li><strong>Module 2 — Hiring Great Cleaners:</strong> The word-for-word job ad, phone screening call script, red flag checklist, and test clean protocol.</li>
+        <li><strong>Module 3 — Booking Customers:</strong> Full incoming call script, follow-up email template, and real pricing strategy table.</li>
+        <li><strong>Module 4 — Daily Operations:</strong> Morning, midday and end-of-day checklists, payment flow, and the money rules that protect you legally.</li>
+        <li><strong>Module 5 — Marketing and Growth:</strong> 6 lead channels ranked by ROI, review system, and referral strategy.</li>
+        <li><strong>Module 6 — Scaling to $10K+/Month:</strong> Phase-by-phase roadmap with specific revenue milestones and the math behind each one.</li>
+      </ul>
+
+      <h2>Who this is for</h2>
+      <p>The playbook is built for people starting a cleaning agency from zero — no industry experience, no employees, no equipment. The entire model is management-based: you hire self-employed cleaners, book clients, coordinate operations, and keep the margin. You never clean a home yourself.</p>
+      <p>It is not for people already running an established operation looking for advanced growth tactics, or people who want a passive income product that requires no work. Building a cleaning agency takes focused effort in the first 60–90 days. After that, with the right systems in place, it runs largely without you.</p>
+
+      <h2>Credibility and transparency</h2>
+      <p>The income figures used throughout this site — $5,600/month, $12,000/month, $22,400/month — are based on real cleaning agency revenue math, not projections or aspirational claims. The underlying assumptions (number of cleaners, cleans per week, average ticket price, margin percentage) are all shown explicitly so you can verify them against your own market. Results depend entirely on execution, local market conditions, and the effort you put in during the setup phase.</p>
+      <p>Over 340 people have purchased and used this playbook. The testimonials shown on the sales page are from real buyers. No results have been fabricated or exaggerated.</p>
+
+      <div class="callout">
+        <p><strong>Questions about the playbook?</strong> Reach out directly at <a href="mailto:hello@cleaningagencyplaybook.com" style="color:var(--teal-lt);">hello@cleaningagencyplaybook.com</a> — responses within 24 hours on business days.</p>
+      </div>
+
+      <div class="article-cta">
+        <h3>Get the Cleaning Agency Playbook</h3>
+        <p>26 slides, 6 modules, every template and system. $97 one-time, instant download.</p>
+        <a href="https://thecleaningschool.gumroad.com/l/cvswjc" target="_blank">Get Instant Access — $97 →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 From Zero to $10K/Month · All rights reserved ·
+    <a href="/blog.html">Blog</a> ·
+    <a href="/about.html">About</a> ·
+    <a href="/contact.html">Contact</a></p>
+    <p style="margin-top:8px; font-size:11px;">Results are not typical. Income figures shown are examples based on real cleaning agency economics. Your results will depend on your effort, market, and execution.</p>
+  </footer>
+</body>
+</html>
