@@ -117,7 +117,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" /></noscript>
 
   <style>
     /* ─── TOKENS ─────────────────────────────────────────── */
@@ -1298,6 +1299,7 @@
       <div class="nav-links">
         <a href="/index.html">Home</a>
         <a href="/blog.html">Blog</a>
+        <a href="/about.html">About</a>
         <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
       </div>
       <div class="nav-mobile-blog" style="display:none;">
@@ -2150,8 +2152,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 From Zero to $10K/Month · All rights reserved · <a href="/blog.html" style="color:var(--teal-lt);">Blog</a></p>
-    <p style="margin-top: 8px;">Questions? <a href="/cdn-cgi/l/email-protection#19717c7575765960766c6b7d7674787077377a7674"><span class="__cf_email__" data-cfemail="e58d8089898aa59c8a9097818a88848c8bcb868a88">[email&#160;protected]</span></a></p>
+    <p>© 2026 From Zero to $10K/Month · All rights reserved · <a href="/blog.html" style="color:var(--teal-lt);">Blog</a> · <a href="/about.html" style="color:var(--teal-lt);">About</a> · <a href="/contact.html" style="color:var(--teal-lt);">Contact</a></p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@cleaningagencyplaybook.com"><span class="__cf_email__" data-cfemail="e58d8089898aa59c8a9097818a88848c8bcb868a88">hello@cleaningagencyplaybook.com</span></a></p>
     <p style="margin-top: 8px; font-size: 11px; color: #475569;">Results are not typical. Income figures shown are examples based on real cleaning agency economics. Your results will depend on your effort, market, and execution.</p>
   </footer>
 
@@ -2165,7 +2167,7 @@
     <a href="https://thecleaningschool.gumroad.com/l/cvswjc" target="_blank" class="btn-primary">Get Instant Access →</a>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script defer>
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(q => {
       q.addEventListener('click', () => {
