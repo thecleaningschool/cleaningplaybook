@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -233,8 +236,16 @@
     .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
     /* ── Mobile ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
+    
+      .nav-mobile-links { display: none; }
+      @media (max-width: 768px) {
+        .nav-links { display: none !important; }
+        .nav-mobile-links { display: flex !important; gap: 10px; align-items: center; }
+        .site-nav-inner { justify-content: space-between; }
+        .nav-logo { font-size: 12px; max-width: 120px; }
+      }
+      @media (max-width: 768px) {
+        .nav-links { display: none !important; }
       .article-hero { padding: 48px 0 40px; }
       .article-body { padding: 40px 0 56px; }
       .article-cta { padding: 28px 22px; }
@@ -290,6 +301,51 @@
   "keywords": "how to hire cleaners, find reliable cleaners, cleaning business hiring, cleaner job ad, screen cleaning applicants"
 }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html#webpage",
+      "url": "https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html",
+      "name": "How to Find and Hire Reliable Cleaners: The Complete System",
+      "description": "The full system for hiring cleaners \u2014 job ads, screening, pay rates, and red flags.",
+      "author": {
+        "@id": "https://cleaningagencyplaybook.com/#author"
+      },
+      "isPartOf": {
+        "@id": "https://cleaningagencyplaybook.com/#website"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cleaningagencyplaybook.com/#author",
+      "name": "Cleaning Agency Playbook",
+      "url": "https://cleaningagencyplaybook.com/about.html",
+      "description": "Active cleaning agency operator. Reached $10K/month running a residential cleaning agency.",
+      "knowsAbout": [
+        "cleaning agency",
+        "cleaning business startup",
+        "residential cleaning",
+        "hiring cleaners",
+        "cleaning business pricing"
+      ],
+      "sameAs": [
+        "https://cleaningagencyplaybook.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cleaningagencyplaybook.com/#website",
+      "url": "https://cleaningagencyplaybook.com",
+      "name": "Cleaning Agency Playbook",
+      "description": "The cleaning business playbook and operating system."
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <nav class="site-nav">
@@ -302,6 +358,11 @@
         <a href="/index.html">Home</a>
         <a href="/blog.html" class="active">Blog</a>
         <a href="/index.html#pricing" class="nav-cta">Get the Playbook — $97</a>
+      </div>
+      <div class="nav-mobile-links" style="display:none; align-items:center; gap:10px;">
+        <a href="/blog.html" style="font-size:11px;font-weight:700;color:#94a3b8;text-decoration:none;">Blog</a>
+        <a href="/about.html" style="font-size:11px;font-weight:700;color:#94a3b8;text-decoration:none;">About</a>
+        <a href="/index.html#pricing" style="background:#f59e0b;color:#07111f;font-size:11px;font-weight:700;padding:7px 10px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Get Playbook</a>
       </div>
     </div>
   </nav>
@@ -328,7 +389,8 @@
         <p><strong>Quick answer:</strong> Post on Indeed (with a $30–50 budget), Facebook Jobs (free), and Nextdoor. Lead with pay ($18–22/hr) and flexible scheduling. Run a 5-minute phone screen, then a paid test clean before hiring. The most reliable predictor of a good hire is how fast they respond to your messages.</p>
       </div>
 
-            <p>Finding reliable cleaners is the hardest part of building a cleaning agency. Anyone who tells you otherwise hasn't actually done it. Your first few hires will not be perfect — that's not failure, that's just the process. What makes the difference is having a system that filters out the worst candidates before they cost you clients and reviews.</p>
+            <p>According to the <a href="https://www.bls.gov/ooh/building-and-grounds-cleaning/maids-and-housekeeping-cleaners.htm" target="_blank" rel="noopener" style="color:var(--teal-lt);">Bureau of Labor Statistics</a>, there are over 900,000 maids and housekeeping cleaners employed in the United States, with consistent demand growth projected through 2030. The labor pool exists — the challenge is finding reliable candidates within it.</p>
+      <p>Finding reliable cleaners is the hardest part of building a cleaning agency. Anyone who tells you otherwise hasn't actually done it. Your first few hires will not be perfect — that's not failure, that's just the process. What makes the difference is having a system that filters out the worst candidates before they cost you clients and reviews.</p>
       <p>This guide covers the full hiring process: where to find candidates, how to write a job ad that attracts reliable people, the phone screen questions that predict reliability, and the red flags that should end the process immediately.</p>
 
       <h2>Where to Find Cleaners</h2>
@@ -372,6 +434,7 @@
       </ol>
 
       <h2>What to Pay Your Cleaners</h2>
+      <p>The <a href="https://www.issa.com/education-certification" target="_blank" rel="noopener" style="color:var(--teal-lt);">ISSA</a> and industry benchmarks consistently show that cleaning agencies with above-market pay rates have cleaner retention rates 40–60% higher than those at or below minimum wage.</p>
       <p>Pay your cleaners fairly. Underpaying cleaners leads to high turnover, low morale, and corners being cut on client jobs. The cost of replacing a cleaner — re-hiring, re-training, and the reputation risk of an unreliable service period — is far higher than the cost of a competitive wage.</p>
 
       <table class="data-table">
