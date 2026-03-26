@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +18,10 @@
   <meta property="og:description" content="Built by an active cleaning agency operator. Every asset in the playbook is pulled from a real agency currently running." />
   <meta property="og:url" content="https://cleaningagencyplaybook.com/about.html" />
   <meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Cleaning Agency Playbook" />
+  <meta name="twitter:description" content="Built from a cleaning agency currently operating. Every template is pulled from real operations." />
+  <meta name="twitter:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
   <meta name="robots" content="index, follow" />
   <script type="application/ld+json">
 {
@@ -264,7 +271,10 @@
 
     /* ── Mobile ── */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .nav-links { display: none !important; }
+      .nav-mobile-blog { display: flex !important; gap: 10px; align-items: center; }
+      .site-nav-inner { justify-content: space-between; }
+      .nav-logo { font-size: 12px; max-width: 120px; }
       .article-hero { padding: 48px 0 40px; }
       .article-body { padding: 40px 0 56px; }
       .article-cta { padding: 28px 22px; }
@@ -274,6 +284,62 @@
       .data-table th, .data-table td { padding: 10px 12px; }
     }
   </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cleaningagencyplaybook.com/about.html#webpage",
+      "url": "https://cleaningagencyplaybook.com/about.html",
+      "name": "About \u2014 Cleaning Agency Playbook",
+      "description": "Built from a cleaning agency currently in operation.",
+      "isPartOf": {
+        "@id": "https://cleaningagencyplaybook.com/#website"
+      },
+      "author": {
+        "@id": "https://cleaningagencyplaybook.com/#author"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cleaning Agency Playbook",
+        "url": "https://cleaningagencyplaybook.com"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cleaningagencyplaybook.com/#author",
+      "name": "Cleaning Agency Playbook",
+      "url": "https://cleaningagencyplaybook.com/about.html",
+      "description": "Active cleaning agency operator and creator of the Cleaning Agency Playbook. Reached $10K/month running a residential cleaning agency without doing any cleaning.",
+      "knowsAbout": [
+        "cleaning agency",
+        "cleaning business startup",
+        "residential cleaning",
+        "hiring cleaners",
+        "cleaning business pricing"
+      ],
+      "sameAs": [
+        "https://cleaningagencyplaybook.com",
+        "https://cleaningagencyplaybook.com/about.html"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cleaningagencyplaybook.com/#website",
+      "url": "https://cleaningagencyplaybook.com",
+      "name": "Cleaning Agency Playbook",
+      "description": "The cleaning agency operating system. Phone scripts, job ad templates, pricing tables, and a phase-by-phase roadmap.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cleaning Agency Playbook",
+        "url": "https://cleaningagencyplaybook.com"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <nav class="site-nav">
@@ -290,7 +356,8 @@
       </div>
       <div class="nav-mobile-blog" style="display:none;">
         <a href="/blog.html">Blog</a>
-        <a href="/index.html#pricing" class="nav-cta">Get Playbook</a>
+        <a href="/about.html">About</a>
+        <a href="/index.html#pricing" class="nav-cta" style="white-space:nowrap;">Get Playbook</a>
       </div>
     </div>
   </nav>
@@ -336,7 +403,7 @@
       <p>Over 340 people have purchased and used this playbook. The testimonials shown on the sales page are from real buyers. No results have been fabricated or exaggerated.</p>
 
       <div class="callout">
-        <p><strong>Questions about the playbook?</strong> Reach out directly at <a href="mailto:hello@cleaningagencyplaybook.com" style="color:var(--teal-lt);">hello@cleaningagencyplaybook.com</a> — responses within 24 hours on business days.</p>
+        <p><strong>Questions about the playbook?</strong> Reach out directly at <a href="mailto:hello@cleaningagencyplaybook.com" style="color:var(--teal-lt);"><span class="__cf_email__" ><span class="__cf_email__" >hello@cleaningagencyplaybook.com</span></span></a> — responses within 24 hours on business days.</p>
       </div>
 
       <div class="article-cta">
@@ -351,9 +418,4 @@
   <footer>
     <p>© 2026 From Zero to $10K/Month · All rights reserved ·
     <a href="/blog.html">Blog</a> ·
-    <a href="/about.html">About</a> ·
-    <a href="/contact.html">Contact</a></p>
-    <p style="margin-top:8px; font-size:11px;">Results are not typical. Income figures shown are examples based on real cleaning agency economics. Your results will depend on your effort, market, and execution.</p>
-  </footer>
-</body>
-</html>
+   
