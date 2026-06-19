@@ -1,525 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.svg" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cleaning Agency Blog — How to Start, Price & Scale | Cleaning Agency Playbook</title>
-  <meta name="description" content="Practical guides for starting and growing a residential cleaning agency. Real pricing ranges, hiring systems, and step-by-step launch guides from an active cleaning agency operator." />
-  <link rel="canonical" href="https://cleaningagencyplaybook.com/blog.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cleaning Agency Blog — How to Start, Price & Scale | Cleaning Agency Playbook" />
-  <meta property="og:description" content="Practical guides for starting and growing a residential cleaning agency. Real pricing ranges, hiring systems, and step-by-step launch guides from an active cleaning agency operator." />
-  <meta property="og:url" content="https://cleaningagencyplaybook.com/blog.html" />
-  <meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
-  <meta property="og:site_name" content="The Cleaning Agency Operating System" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cleaning Agency Blog — How to Start, Price & Scale | Cleaning Agency Playbook" />
-  <meta name="twitter:description" content="Practical guides for starting and growing a residential cleaning agency. Real pricing ranges, hiring systems, and step-by-step launch guides from an active cleaning agency operator." />
-  <meta name="twitter:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
-
-  <!-- Indexing -->
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="The Cleaning Agency Operating System" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "The Cleaning Agency Operating System Blog",
-  "description": "Practical guides for starting, pricing, hiring, and scaling a residential cleaning agency \u2014 written by an active cleaning agency operator.",
-  "url": "https://cleaningagencyplaybook.com/blog.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Cleaning Agency Operating System",
-    "url": "https://cleaningagencyplaybook.com"
-  },
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "How to Start a Cleaning Business With No Experience (2026 Guide)",
-      "url": "https://cleaningagencyplaybook.com/blog/how-to-start-cleaning-business.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026",
-      "url": "https://cleaningagencyplaybook.com/blog/cleaning-business-pricing-guide.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "How to Find and Hire Reliable Cleaners: The Complete System",
-      "url": "https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html"
-    }
-  ]
-}
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" /></noscript>
-  <style>
-    :root {
-      --navy:    #0e1c30;
-      --navy2:   #162540;
-      --navy3:   #1e3356;
-      --teal:    #0d9488;
-      --teal-lt: #14b8a6;
-      --gold:    #f59e0b;
-      --gold-lt: #fbbf24;
-      --white:   #ffffff;
-      --muted:   #94a3b8;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:  'DM Sans', system-ui, sans-serif;
-      --mono:  'DM Mono', monospace;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--navy); color: var(--white); overflow-x: hidden; line-height: 1.7; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-    /* ── Nav ── */
-    .site-nav {
-      background: rgba(14,28,48,0.96);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 0 24px;
-      position: sticky; top: 0; z-index: 100;
-      backdrop-filter: blur(12px);
-    }
-    .site-nav-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px;
-    }
-    .nav-logo {
-      font-family: var(--serif); font-size: 17px; font-weight: 700;
-      color: var(--white); display: flex; align-items: center; gap: 10px;
-    }
-    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-lt); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; transition: color 0.15s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta {
-      background: var(--gold); color: var(--navy);
-      font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px;
-      transition: opacity 0.15s;
-    }
-    .nav-cta:hover { opacity: 0.9; }
-
-    /* ── Footer ── */
-    footer {
-      background: #07111f;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: #475569;
-    }
-    footer a { color: var(--teal-lt); }
-
-    /* ── Shared blog card styles ── */
-    .blog-card {
-      background: var(--navy2);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .blog-card:hover { border-color: rgba(13,148,136,0.4); transform: translateY(-3px); }
-    .blog-card-body { padding: 24px; }
-    .blog-tag {
-      display: inline-block;
-      background: rgba(13,148,136,0.12);
-      border: 1px solid rgba(13,148,136,0.25);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--teal-lt); margin-bottom: 12px;
-    }
-    .blog-tag.gold {
-      background: rgba(245,158,11,0.1);
-      border-color: rgba(245,158,11,0.25);
-      color: var(--gold);
-    }
-    .blog-card-title {
-      font-family: var(--serif); font-size: 20px; font-weight: 700;
-      color: var(--white); line-height: 1.3; margin-bottom: 10px;
-    }
-    .blog-card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
-    .blog-card-meta { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 8px; }
-    .blog-card-meta span { color: var(--teal-lt); }
-    .blog-read-more {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 700; color: var(--teal-lt);
-      margin-top: 14px; transition: gap 0.15s;
-    }
-    .blog-card:hover .blog-read-more { gap: 10px; }
-
-    /* ── Article styles ── */
-    .article-hero {
-      background: var(--navy2);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 72px 0 56px;
-    }
-    .article-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px;
-    }
-    .article-title {
-      font-family: var(--serif); font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
-      color: var(--white); margin-bottom: 18px; max-width: 720px;
-    }
-    .article-subtitle {
-      font-size: 18px; color: var(--muted); line-height: 1.65;
-      max-width: 620px; margin-bottom: 24px;
-    }
-    .article-meta {
-      font-size: 13px; color: #475569;
-      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-    }
-    .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #374151; }
-
-    .article-body { padding: 56px 0 72px; }
-    .article-body .container { max-width: 720px; }
-    .article-body h2 {
-      font-family: var(--serif); font-size: clamp(22px, 3.5vw, 30px);
-      font-weight: 700; color: var(--white); margin: 48px 0 16px;
-      letter-spacing: -0.015em; line-height: 1.2;
-    }
-    .article-body h3 {
-      font-size: 18px; font-weight: 700; color: var(--white);
-      margin: 32px 0 12px;
-    }
-    .article-body p {
-      font-size: 16px; color: #94a3b8; line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    .article-body p strong { color: var(--white); }
-    .article-body ul, .article-body ol {
-      margin: 0 0 20px 0; padding-left: 0;
-      list-style: none; display: flex; flex-direction: column; gap: 10px;
-    }
-    .article-body li {
-      font-size: 16px; color: #94a3b8; line-height: 1.7;
-      padding-left: 24px; position: relative;
-    }
-    .article-body ul li::before {
-      content: '→'; position: absolute; left: 0;
-      color: var(--teal-lt); font-weight: 700;
-    }
-    .article-body ol { counter-reset: item; }
-    .article-body ol li { counter-increment: item; }
-    .article-body ol li::before {
-      content: counter(item) '.'; position: absolute; left: 0;
-      color: var(--gold); font-weight: 700; font-family: var(--mono); font-size: 14px;
-    }
-    .callout {
-      background: rgba(13,148,136,0.08);
-      border-left: 3px solid var(--teal-lt);
-      border-radius: 0 8px 8px 0;
-      padding: 18px 22px; margin: 28px 0;
-    }
-    .callout p { color: #cbd5e1 !important; margin: 0; }
-    .callout strong { color: var(--teal-lt) !important; }
-    .callout-gold {
-      background: rgba(245,158,11,0.08);
-      border-left: 3px solid var(--gold);
-    }
-    .callout-gold p { color: #cbd5e1 !important; }
-    .callout-gold strong { color: var(--gold) !important; }
-    .data-table {
-      width: 100%; border-collapse: collapse; margin: 24px 0;
-      font-size: 15px;
-    }
-    .data-table th {
-      background: var(--navy3); color: var(--teal-lt);
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 12px 16px; text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .data-table td {
-      padding: 12px 16px; color: #94a3b8;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table td:first-child { color: var(--white); font-weight: 600; }
-    .data-table td.gold { color: var(--gold); font-family: var(--mono); font-weight: 700; }
-    .article-cta {
-      background: linear-gradient(180deg, var(--navy2) 0%, #091729 100%);
-      border: 1px solid rgba(13,148,136,0.2);
-      border-radius: 16px; padding: 40px 36px; margin: 48px 0;
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .article-cta::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(13,148,136,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .article-cta h3 {
-      font-family: var(--serif); font-size: 24px; font-weight: 700;
-      color: var(--white); margin: 0 0 10px; position: relative;
-    }
-    .article-cta p {
-      color: var(--muted); font-size: 15px; margin: 0 0 24px; position: relative;
-    }
-    .article-cta a {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold); color: var(--navy);
-      font-weight: 700; font-size: 16px; padding: 16px 36px;
-      border-radius: 8px; position: relative;
-      box-shadow: 0 4px 20px rgba(245,158,11,0.35);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .article-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.4); }
-
-    /* ── Related posts ── */
-    .related { background: var(--navy2); border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 0; }
-    .related h2 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 28px; }
-    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-    /* ── Mobile ── */
-    
-      .nav-mobile-links { display: none; }
-      @media (max-width: 768px) {
-        .nav-links { display: none !important; }
-        .nav-mobile-links { display: flex !important; gap: 10px; align-items: center; }
-        .site-nav-inner { justify-content: space-between; }
-        .nav-logo { font-size: 12px; max-width: 120px; }
-      }
-      @media (max-width: 768px) {
-        .nav-links { display: none !important; }
-      .article-hero { padding: 48px 0 40px; }
-      .article-body { padding: 40px 0 56px; }
-      .article-cta { padding: 28px 22px; }
-      .article-cta a { width: 100%; justify-content: center; }
-      .related-grid { grid-template-columns: 1fr; }
-      .data-table { font-size: 13px; }
-      .data-table th, .data-table td { padding: 10px 12px; }
-    }
-  </style>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://cleaningagencyplaybook.com/blog.html#webpage",
-      "url": "https://cleaningagencyplaybook.com/blog.html",
-      "name": "Cleaning Agency Blog",
-      "description": "Practical guides for starting, pricing, hiring, and scaling a residential cleaning agency.",
-      "isPartOf": {
-        "@id": "https://cleaningagencyplaybook.com/#website"
-      },
-      "author": {
-        "@id": "https://cleaningagencyplaybook.com/#author"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "The Cleaning Agency Operating System",
-        "url": "https://cleaningagencyplaybook.com"
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://cleaningagencyplaybook.com/#author",
-      "name": "The Cleaning Agency Operating System",
-      "url": "https://cleaningagencyplaybook.com/about.html",
-      "description": "Active cleaning agency operator and creator of the Cleaning Agency Playbook. Reached $10K/month running a residential cleaning agency without doing any cleaning.",
-      "knowsAbout": [
-        "cleaning agency",
-        "cleaning business startup",
-        "residential cleaning",
-        "hiring cleaners",
-        "cleaning business pricing"
-      ],
-      "sameAs": [
-        "https://cleaningagencyplaybook.com",
-        "https://cleaningagencyplaybook.com/about.html"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://cleaningagencyplaybook.com/#website",
-      "url": "https://cleaningagencyplaybook.com",
-      "name": "The Cleaning Agency Operating System",
-      "description": "The cleaning agency operating system. Phone scripts, job ad templates, pricing tables, and a phase-by-phase roadmap.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "The Cleaning Agency Operating System",
-        "url": "https://cleaningagencyplaybook.com"
-      }
-    }
-  ]
-}
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleaning Agency Blog — How to Start, Price &amp; Scale | Cleaning Agency Playbook</title>
+<meta name="description" content="Practical guides for starting, pricing, hiring, and scaling a cleaning agency — written by someone who actually runs one. Real scripts, real numbers, no fluff.">
+<link rel="canonical" href="https://cleaningagencyplaybook.com/blog.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale">
+<meta property="og:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one.">
+<meta property="og:url" content="https://cleaningagencyplaybook.com/blog.html">
+<meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <style>
-    .blog-hero {
-      background: var(--navy2);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 72px 0 56px;
-      text-align: center;
-    }
-    .blog-hero-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px;
-    }
-    .blog-hero-title {
-      font-family: var(--serif); font-size: clamp(32px, 5vw, 52px);
-      font-weight: 700; color: var(--white); margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-    .blog-hero-sub { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.65; }
-    .blog-grid { padding: 56px 0 80px; }
-    .blog-grid-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .blog-card-accent { height: 3px; background: linear-gradient(90deg, var(--teal), var(--teal-lt)); }
-    .blog-card-accent.gold { background: linear-gradient(90deg, var(--gold), var(--gold-lt)); }
-    .blog-card-accent.rose { background: linear-gradient(90deg, #f43f5e, #fb7185); }
-    @media (max-width: 768px) {
-      .blog-grid-inner { grid-template-columns: 1fr; }
-      .blog-hero { padding: 48px 0 40px; }
-    }
-  </style>
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="/" class="nav-logo">
-        <div class="nav-logo-dot"></div>
-        Cleaning Agency Playbook
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">The Cleaning Agency OS<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#pricing" class="btn">Get the System — $97</a>
+    </nav>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <div class="wrap">
+    <span class="eyebrow">The cleaning agency blog</span>
+    <h1>Build. Hire. <em>Scale.</em></h1>
+    <p>Practical guides for starting and growing a cleaning agency — from someone who actually runs one. Real scripts, real numbers, no fluff.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="post-list">
+      <a class="post-row" href="blog/how-to-start-cleaning-business.html">
+        <span class="p-cat">Getting started</span>
+        <div><h3>How to Start a Cleaning Business With No Experience (2026 Guide)</h3><p>A step-by-step breakdown of exactly how to launch a cleaning agency from zero — no industry experience, no equipment, no storefront required.</p></div>
+        <span class="p-read">8 min · Most popular</span>
       </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/blog.html" class="active">Blog</a>
-        <a href="/#pricing" class="nav-cta">Get the Operating System — $97</a>
-      </div>
-      <div class="nav-mobile-links" style="display:none; align-items:center; gap:10px;">
-        <a href="/blog.html" style="font-size:11px;font-weight:700;color:#94a3b8;text-decoration:none;">Blog</a>
-        <a href="/about.html" style="font-size:11px;font-weight:700;color:#94a3b8;text-decoration:none;">About</a>
-        <a href="/#pricing" style="background:#f59e0b;color:#07111f;font-size:11px;font-weight:700;padding:7px 10px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Get the System</a>
-      </div>
+      <a class="post-row" href="blog/cleaning-business-pricing-guide.html">
+        <span class="p-cat">Pricing</span>
+        <div><h3>How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026</h3><p>The actual market rates for residential cleaning — standard, deep, move-in/out, and add-ons — so you never underprice again.</p></div>
+        <span class="p-read">5 min · High value</span>
+      </a>
+      <a class="post-row" href="blog/how-to-hire-cleaners.html">
+        <span class="p-cat">Hiring</span>
+        <div><h3>How to Find and Hire Reliable Cleaners: The Complete System</h3><p>Where to post, what to say, how to screen applicants, and the red flags that predict ghosting and no-shows before you make the hire.</p></div>
+        <span class="p-read">7 min · Essential</span>
+      </a>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section class="blog-hero">
-    <div class="container">
-      <p class="blog-hero-label">The Cleaning Agency Blog</p>
-      <h1 class="blog-hero-title">Build. Hire. Scale.</h1>
-      <p class="blog-hero-sub">Practical guides for starting and growing a cleaning agency — from someone who actually runs one.</p>
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">© 2026 From Zero to $10K/Month · All rights reserved</div>
+      <nav class="foot-links">
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#pricing">Get the System</a>
+      </nav>
     </div>
-  </section>
+    <p class="foot-fine">Results are not typical. Income figures shown are examples based on real cleaning-agency economics. Your results will depend on your effort, market, and execution.</p>
+  </div>
+</footer>
 
-  <section class="blog-grid">
-    <div class="container--wide">
-      <div class="blog-grid-inner">
-
-        <a href="/blog/how-to-start-cleaning-business.html" class="blog-card">
-          <div class="blog-card-accent"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Getting Started</span>
-            <h2 class="blog-card-title">How to Start a Cleaning Business With No Experience (2026 Guide)</h2>
-            <p class="blog-card-excerpt">A step-by-step breakdown of exactly how to launch a cleaning agency from zero — no industry experience, no equipment, no storefront required.</p>
-            <div class="blog-card-meta">6 min read <span>·</span> Most Popular</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/cleaning-business-pricing-guide.html" class="blog-card">
-          <div class="blog-card-accent gold"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag gold">Pricing</span>
-            <h2 class="blog-card-title">How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026</h2>
-            <p class="blog-card-excerpt">The actual market rates for residential cleaning — standard cleans, deep cleans, move-in/out, and add-ons — so you never underprice again.</p>
-            <div class="blog-card-meta">5 min read <span>·</span> High Value</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/how-to-hire-cleaners.html" class="blog-card">
-          <div class="blog-card-accent rose"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag" style="background:rgba(244,63,94,0.1);border-color:rgba(244,63,94,0.25);color:#fb7185;">Hiring</span>
-            <h2 class="blog-card-title">How to Find and Hire Reliable Cleaners: The Complete System</h2>
-            <p class="blog-card-excerpt">Where to post, what to say, how to screen applicants, and the red flags that predict ghosting and no-shows before you make the hire.</p>
-            <div class="blog-card-meta">7 min read <span>·</span> Essential</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-
-        <a href="/blog/how-much-does-it-cost-to-start-a-cleaning-business.html" class="blog-card">
-          <div class="blog-card-accent"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Getting Started</span>
-            <h2 class="blog-card-title">How Much Does It Cost to Start a Cleaning Business in 2026</h2>
-            <p class="blog-card-excerpt">The real startup cost breakdown — line by line. Most owners spend under $250 to launch.</p>
-            <div class="blog-card-meta">6 min read</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/cleaning-business-software.html" class="blog-card">
-          <div class="blog-card-accent"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Operations</span>
-            <h2 class="blog-card-title">Best Cleaning Business Software in 2026: The Complete Stack</h2>
-            <p class="blog-card-excerpt">Booking, scheduling, payments, and payroll — what to use, what to skip, and what it costs.</p>
-            <div class="blog-card-meta">6 min read</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/how-to-get-cleaning-clients.html" class="blog-card">
-          <div class="blog-card-accent gold"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag gold">Marketing</span>
-            <h2 class="blog-card-title">How to Get Your First Cleaning Clients (2026 Guide)</h2>
-            <p class="blog-card-excerpt">The fastest channels for getting first bookings with zero reviews — Nextdoor, lead platforms, and real estate agents.</p>
-            <div class="blog-card-meta">6 min read</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/how-to-scale-cleaning-business.html" class="blog-card">
-          <div class="blog-card-accent gold"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag gold">Scaling</span>
-            <h2 class="blog-card-title">How to Scale a Cleaning Business to $10K/Month</h2>
-            <p class="blog-card-excerpt">Phase-by-phase roadmap from first booking to $10K/month — with exact revenue math and hiring milestones.</p>
-            <div class="blog-card-meta">6 min read</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-
-        <a href="/blog/run-cleaning-business-without-cleaning.html" class="blog-card">
-          <div class="blog-card-accent"></div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Operations</span>
-            <h2 class="blog-card-title">How to Run a Cleaning Business Without Doing Any Cleaning</h2>
-            <p class="blog-card-excerpt">The agency model explained — hire cleaners, manage operations, and never touch a mop yourself.</p>
-            <div class="blog-card-meta">6 min read</div>
-            <div class="blog-read-more">Read article →</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 From Zero to $10K/Month · All rights reserved ·
-    <a href="/blog.html">Blog</a> ·
-    <a href="/about.html">About</a> ·
-    <a href="/contact.html">Contact</a></p>
-    <p style="margin-top:8px; font-size:11px;">Results are not typical. Income figures shown are examples based on real cle
+<script>
+  const tgl = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  tgl.addEventListener('click', () => { const o = links.classList.toggle('open'); tgl.setAttribute('aria-expanded', o); });
+</script>
+</body>
+</html>
