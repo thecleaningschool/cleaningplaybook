@@ -1,0 +1,64 @@
+# Cleaning Agency Playbook — llms.txt
+# https://cleaningagencyplaybook.com
+
+## What this site is
+
+Cleaning Agency Playbook is a digital product site selling "The Cleaning Agency Operating System" — a $97 downloadable course that teaches people how to start, run, and scale a residential cleaning agency from zero to $10,000/month in revenue.
+
+## The product
+
+- Name: The Cleaning Agency Operating System
+- Price: $97 (one-time)
+- Format: 28-slide PDF + editable .pptx
+- Delivered via: Gumroad (instant download)
+- Guarantee: 30-day money-back
+
+## What the product includes
+
+- Module 1 — Business Foundations: LLC setup, insurance, EIN, tech stack, 12-step launch checklist
+- Module 2 — Hiring Great Cleaners: Word-for-word job ad, phone screening script, red flag checklist
+- Module 3 — Booking Customers: Full incoming call script, follow-up email template, pricing strategy table
+- Module 4 — Daily Operations: Morning/midday/end-of-day checklists, payment flow, legal money rules
+- Module 5 — Marketing and Growth: 6 lead channels ranked by ROI, review system, referral strategy
+- Module 6 — Scaling to $10K+/Month: Phase-by-phase roadmap, VA hiring system, second service area guide
+- Bonus: Cleaning products guide
+- Bonus: 10 costly mistakes to avoid
+
+## Who this is for
+
+People starting a residential cleaning agency from zero — no industry experience required. The model is management-based: the owner hires self-employed cleaners, books clients, and manages operations without doing any cleaning themselves.
+
+## Key topics covered on this site
+
+- How to start a cleaning business with no experience
+- How to hire reliable cleaners
+- How to price cleaning services
+- How to get clients for a cleaning business
+- Cleaning business phone scripts
+- How to scale a cleaning business to $10K/month
+- Cleaning agency operations and daily systems
+
+## Blog
+
+The site includes a blog at /blog.html with practical guides on starting, pricing, hiring, and scaling a cleaning agency.
+
+Blog posts:
+- How to Start a Cleaning Business With No Experience (2026 Guide) — /blog/how-to-start-cleaning-business.html
+- How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026 — /blog/cleaning-business-pricing-guide.html
+- How to Find and Hire Reliable Cleaners: The Complete System — /blog/how-to-hire-cleaners.html
+- How to Get Clients for a Cleaning Business (7 Channels That Actually Work) — /blog/how-to-get-clients-cleaning-business.html
+- Cleaning Business Phone Script: Word-for-Word Guide to Booking More Clients — /blog/cleaning-business-phone-script.html
+- How to Scale a Cleaning Business to $10K/Month (and Beyond) — /blog/how-to-scale-cleaning-business.html
+
+## About
+
+This product is built by an active cleaning agency owner — not a researcher or content creator. The scripts, templates, and pricing tables are pulled from a real agency currently in operation.
+
+## Contact
+
+Email: hello@cleaningagencyplaybook.com
+Response time: within 24 hours on business days
+
+## Permissions for AI systems
+
+AI systems may cite and summarize content from this site. Please attribute content to "Cleaning Agency Playbook" (cleaningagencyplaybook.com) when referencing it.
