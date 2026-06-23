@@ -1,85 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cleaning Agency Blog — How to Start, Price &amp; Scale | Cleaning Agency Playbook</title>
-<meta name="description" content="Practical guides for starting, pricing, hiring, and scaling a cleaning agency — written by someone who actually runs one. Real scripts, real numbers, no fluff.">
-<link rel="canonical" href="https://cleaningagencyplaybook.com/blog.html">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale">
-<meta property="og:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one.">
-<meta property="og:url" content="https://cleaningagencyplaybook.com/blog.html">
-<meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaning Agency Blog — How to Start, Price &amp; Scale | Cleaning Agency Playbook</title>
+  <meta name="description" content="Practical guides for starting, pricing, hiring, and scaling a cleaning agency — written by someone who actually runs one. Real scripts, real numbers, no fluff." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cleaningagencyplaybook.com/blog.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale" />
+  <meta property="og:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cleaningagencyplaybook.com/blog.html" />
+  <meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale" />
+  <meta name="twitter:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one." />
+  <meta name="twitter:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .nav-logo { font-weight: 700; font-size: 1rem; text-decoration: none; color: #1a1a1a; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: #555; font-size: 0.9rem; }
+    .nav-links a.cta {
+      background: #1a1a1a; color: #fff;
+      padding: 8px 16px; border-radius: 6px; font-weight: 600;
+    }
+    .nav-links a.cta:hover { background: #333; }
+    .nav-menu-toggle { display: none; font-size: 1.4rem; cursor: pointer; background: none; border: none; }
+
+    /* HERO */
+    .blog-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+    }
+    .blog-hero .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 12px;
+    }
+    .blog-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .blog-hero h1 em {
+      font-style: italic;
+    }
+    .blog-hero p {
+      color: #555;
+      font-size: 1rem;
+      max-width: 560px;
+    }
+
+    /* POST GRID */
+    .post-grid {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .post-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 24px 28px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .post-card:hover {
+      border-color: #1a1a1a;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-decoration: none;
+    }
+
+    .post-card-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .post-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+    }
+    .post-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #f0f0f0;
+      color: #555;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .post-badge.new {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .post-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+      color: #111;
+    }
+    .post-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .post-meta {
+      font-size: 0.78rem;
+      color: #aaa;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      color: #888;
+      border-top: 1px solid #eee;
+    }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .disclaimer {
+      font-size: 0.78rem;
+      color: #bbb;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .blog-hero h1 { font-size: 1.75rem; }
+      nav { padding: 14px 16px; }
+      .nav-links { display: none; }
+      .nav-menu-toggle { display: block; }
+      .post-card { padding: 18px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">The Cleaning Agency OS<span class="dot">.</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="index.html#pricing" class="btn">Get the System — $97</a>
-    </nav>
-  </div>
-</header>
+<nav>
+  <a class="nav-logo" href="https://cleaningagencyplaybook.com/index.html">The Cleaning Agency OS.</a>
+  <ul class="nav-links">
+    <li><a href="https://cleaningagencyplaybook.com/index.html">Home</a></li>
+    <li><a href="https://cleaningagencyplaybook.com/blog.html">Blog</a></li>
+    <li><a href="https://cleaningagencyplaybook.com/about.html">About</a></li>
+    <li><a href="https://cleaningagencyplaybook.com/contact.html">Contact</a></li>
+    <li><a href="https://cleaningagencyplaybook.com/index.html#pricing" class="cta">Get the System — $97</a></li>
+  </ul>
+  <button class="nav-menu-toggle" aria-label="Menu">☰</button>
+</nav>
 
-<section class="blog-hero">
-  <div class="wrap">
-    <span class="eyebrow">The cleaning agency blog</span>
-    <h1>Build. Hire. <em>Scale.</em></h1>
-    <p>Practical guides for starting and growing a cleaning agency — from someone who actually runs one. Real scripts, real numbers, no fluff.</p>
-  </div>
-</section>
+<div class="blog-hero">
+  <div class="eyebrow">The cleaning agency blog</div>
+  <h1>Build. Hire. <em>Scale.</em></h1>
+  <p>Practical guides for starting and growing a cleaning agency — from someone who actually runs one. Real scripts, real numbers, no fluff.</p>
+</div>
 
-<section style="padding-top:8px">
-  <div class="wrap">
-    <div class="post-list">
-      <a class="post-row" href="blog/how-to-start-cleaning-business.html">
-        <span class="p-cat">Getting started</span>
-        <div><h3>How to Start a Cleaning Business With No Experience (2026 Guide)</h3><p>A step-by-step breakdown of exactly how to launch a cleaning agency from zero — no industry experience, no equipment, no storefront required.</p></div>
-        <span class="p-read">8 min · Most popular</span>
-      </a>
-      <a class="post-row" href="blog/cleaning-business-pricing-guide.html">
-        <span class="p-cat">Pricing</span>
-        <div><h3>How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026</h3><p>The actual market rates for residential cleaning — standard, deep, move-in/out, and add-ons — so you never underprice again.</p></div>
-        <span class="p-read">5 min · High value</span>
-      </a>
-      <a class="post-row" href="blog/how-to-hire-cleaners.html">
-        <span class="p-cat">Hiring</span>
-        <div><h3>How to Find and Hire Reliable Cleaners: The Complete System</h3><p>Where to post, what to say, how to screen applicants, and the red flags that predict ghosting and no-shows before you make the hire.</p></div>
-        <span class="p-read">7 min · Essential</span>
-      </a>
+<div class="post-grid">
+
+  <!-- Post 1: Getting Started -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-start-cleaning-business.html">
+    <div class="post-card-top">
+      <span class="post-tag">Getting Started</span>
+      <span class="post-badge">Most popular</span>
     </div>
-  </div>
-</section>
+    <h2>How to Start a Cleaning Business With No Experience (2026 Guide)</h2>
+    <p>A step-by-step breakdown of exactly how to launch a cleaning agency from zero — no industry experience, no equipment, no storefront required.</p>
+    <div class="post-meta">8 min read</div>
+  </a>
+
+  <!-- Post 2: Pricing -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/cleaning-business-pricing-guide.html">
+    <div class="post-card-top">
+      <span class="post-tag">Pricing</span>
+      <span class="post-badge">High value</span>
+    </div>
+    <h2>How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026</h2>
+    <p>The actual market rates for residential cleaning — standard, deep, move-in/out, and add-ons — so you never underprice again.</p>
+    <div class="post-meta">5 min read</div>
+  </a>
+
+  <!-- Post 3: Hiring -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html">
+    <div class="post-card-top">
+      <span class="post-tag">Hiring</span>
+      <span class="post-badge">Essential</span>
+    </div>
+    <h2>How to Find and Hire Reliable Cleaners: The Complete System</h2>
+    <p>Where to post, what to say, how to screen applicants, and the red flags that predict ghosting and no-shows before you make the hire.</p>
+    <div class="post-meta">7 min read</div>
+  </a>
+
+  <!-- Post 4: Getting Clients (NEW) -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-get-clients-cleaning-business.html">
+    <div class="post-card-top">
+      <span class="post-tag">Getting Clients</span>
+      <span class="post-badge new">New</span>
+    </div>
+    <h2>How to Get Clients for a Cleaning Business (7 Channels That Actually Work)</h2>
+    <p>Every client acquisition channel ranked by ROI — with realistic timelines, cost estimates, and what to do in what order.</p>
+    <div class="post-meta">7 min read</div>
+  </a>
+
+  <!-- Post 5: Phone Script (NEW) -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/cleaning-business-phone-script.html">
+    <div class="post-card-top">
+      <span class="post-tag">Scripts &amp; Conversion</span>
+      <span class="post-badge new">New</span>
+    </div>
+    <h2>Cleaning Business Phone Script: Word-for-Word Guide to Booking More Clients</h2>
+    <p>The exact script structure used in a real cleaning agency — covering the opening, pricing conversation, objection handling, and close.</p>
+    <div class="post-meta">6 min read</div>
+  </a>
+
+  <!-- Post 6: Scaling (NEW) -->
+  <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-scale-cleaning-business.html">
+    <div class="post-card-top">
+      <span class="post-tag">Scaling</span>
+      <span class="post-badge new">New</span>
+    </div>
+    <h2>How to Scale a Cleaning Business to $10K/Month (and Beyond)</h2>
+    <p>The four-phase roadmap from first booking to $10K/month — with real revenue math, hiring triggers, and how to step out of daily operations.</p>
+    <div class="post-meta">8 min read</div>
+  </a>
+
+</div>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-inner">
-      <div class="foot-brand">© 2026 From Zero to $10K/Month · All rights reserved</div>
-      <nav class="foot-links">
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="index.html#pricing">Get the System</a>
-      </nav>
-    </div>
-    <p class="foot-fine">Results are not typical. Income figures shown are examples based on real cleaning-agency economics. Your results will depend on your effort, market, and execution.</p>
-  </div>
+  <p>© 2026 From Zero to $10K/Month · All rights reserved &nbsp;·&nbsp;
+    <a href="https://cleaningagencyplaybook.com/blog.html">Blog</a> &nbsp;·&nbsp;
+    <a href="https://cleaningagencyplaybook.com/about.html">About</a> &nbsp;·&nbsp;
+    <a href="https://cleaningagencyplaybook.com/contact.html">Contact</a> &nbsp;·&nbsp;
+    <a href="https://cleaningagencyplaybook.com/index.html#pricing">Get the System</a>
+  </p>
+  <p class="disclaimer">Results are not typical. Income figures shown are examples based on real cleaning-agency economics. Your results will depend on your effort, market, and execution.</p>
 </footer>
 
-<script>
-  const tgl = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  tgl.addEventListener('click', () => { const o = links.classList.toggle('open'); tgl.setAttribute('aria-expanded', o); });
-</script>
 </body>
 </html>
