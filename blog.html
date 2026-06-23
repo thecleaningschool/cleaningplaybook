@@ -3,23 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cleaning Agency Blog — How to Start, Price &amp; Scale | Cleaning Agency Playbook</title>
-  <meta name="description" content="Practical guides for starting, pricing, hiring, and scaling a cleaning agency — written by someone who actually runs one. Real scripts, real numbers, no fluff." />
+
+  <!-- FIXED: Title shortened to <60 chars, primary keyword included -->
+  <title>Cleaning Business Blog | Start, Hire &amp; Scale</title>
+
+  <!-- FIXED: Meta description trimmed to ~155 chars, keyword included -->
+  <meta name="description" content="Practical cleaning business guides on starting, pricing, hiring, and scaling a cleaning agency — real scripts, real numbers, from someone who runs one." />
+
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cleaningagencyplaybook.com/blog.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale" />
-  <meta property="og:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one." />
+  <meta property="og:title" content="Cleaning Business Blog | Start, Hire &amp; Scale" />
+  <meta property="og:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one. Real scripts, real numbers, no fluff." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cleaningagencyplaybook.com/blog.html" />
   <meta property="og:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+  <meta property="og:site_name" content="Cleaning Agency Playbook" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cleaning Agency Blog — How to Start, Price &amp; Scale" />
+  <meta name="twitter:title" content="Cleaning Business Blog | Start, Hire &amp; Scale" />
   <meta name="twitter:description" content="Practical guides for starting and growing a cleaning agency — from someone who actually runs one." />
   <meta name="twitter:image" content="https://cleaningagencyplaybook.com/cover_1280x720.png" />
+
+  <!-- Structured Data: WebSite + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cleaningagencyplaybook.com/#website",
+        "url": "https://cleaningagencyplaybook.com/",
+        "name": "Cleaning Agency Playbook",
+        "description": "How to start, run, and scale a cleaning business from zero to $10K/month.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Cleaning Agency Playbook",
+          "url": "https://cleaningagencyplaybook.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cleaningagencyplaybook.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://cleaningagencyplaybook.com/blog.html"
+          }
+        ]
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://cleaningagencyplaybook.com/blog.html",
+        "name": "Cleaning Business Blog",
+        "url": "https://cleaningagencyplaybook.com/blog.html",
+        "description": "Practical guides on how to start, price, hire for, and scale a residential cleaning business.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Cleaning Agency Playbook",
+          "url": "https://cleaningagencyplaybook.com/"
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "How to Start a Cleaning Business With No Experience (2026 Guide)",
+            "url": "https://cleaningagencyplaybook.com/blog/how-to-start-cleaning-business.html"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "How Much to Charge for Cleaning Services: Real Pricing Ranges for 2026",
+            "url": "https://cleaningagencyplaybook.com/blog/cleaning-business-pricing-guide.html"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "How to Find and Hire Reliable Cleaners: The Complete System",
+            "url": "https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "How to Get Clients for a Cleaning Business (7 Channels That Actually Work)",
+            "url": "https://cleaningagencyplaybook.com/blog/how-to-get-clients-cleaning-business.html"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Cleaning Business Phone Script: Word-for-Word Guide to Booking More Clients",
+            "url": "https://cleaningagencyplaybook.com/blog/cleaning-business-phone-script.html"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "How to Scale a Cleaning Business to $10K/Month (and Beyond)",
+            "url": "https://cleaningagencyplaybook.com/blog/how-to-scale-cleaning-business.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +120,6 @@
       font-size: 16px;
     }
 
-    /* NAV */
     nav {
       display: flex;
       align-items: center;
@@ -52,13 +139,11 @@
       padding: 8px 16px; border-radius: 6px; font-weight: 600;
     }
     .nav-links a.cta:hover { background: #333; }
-    .nav-menu-toggle { display: none; font-size: 1.4rem; cursor: pointer; background: none; border: none; }
 
-    /* HERO */
     .blog-hero {
       max-width: 720px;
       margin: 0 auto;
-      padding: 56px 24px 40px;
+      padding: 56px 24px 32px;
     }
     .blog-hero .eyebrow {
       font-size: 0.78rem;
@@ -68,26 +153,41 @@
       color: #888;
       margin-bottom: 12px;
     }
+    /* FIXED: H1 now includes primary keyword "cleaning business" */
     .blog-hero h1 {
       font-size: 2.4rem;
       font-weight: 800;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .blog-hero h1 em {
-      font-style: italic;
-    }
+    .blog-hero h1 em { font-style: italic; }
     .blog-hero p {
       color: #555;
       font-size: 1rem;
-      max-width: 560px;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 12px;
     }
 
-    /* POST GRID */
+    /* ADDED: keyword-rich intro section (300+ words) */
+    .blog-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      border-bottom: 1px solid #eee;
+    }
+    .blog-intro p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .blog-intro p:last-child { margin-bottom: 0; }
+
     .post-grid {
       max-width: 720px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 40px 24px 80px;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -152,7 +252,6 @@
       color: #aaa;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 32px 24px;
@@ -162,17 +261,11 @@
     }
     footer a { color: #888; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-    .disclaimer {
-      font-size: 0.78rem;
-      color: #bbb;
-      margin-top: 8px;
-    }
+    .disclaimer { font-size: 0.78rem; color: #bbb; margin-top: 8px; }
 
     @media (max-width: 600px) {
       .blog-hero h1 { font-size: 1.75rem; }
       nav { padding: 14px 16px; }
-      .nav-links { display: none; }
-      .nav-menu-toggle { display: block; }
       .post-card { padding: 18px 20px; }
     }
   </style>
@@ -188,18 +281,30 @@
     <li><a href="https://cleaningagencyplaybook.com/contact.html">Contact</a></li>
     <li><a href="https://cleaningagencyplaybook.com/index.html#pricing" class="cta">Get the System — $97</a></li>
   </ul>
-  <button class="nav-menu-toggle" aria-label="Menu">☰</button>
 </nav>
 
 <div class="blog-hero">
-  <div class="eyebrow">The cleaning agency blog</div>
-  <h1>Build. Hire. <em>Scale.</em></h1>
-  <p>Practical guides for starting and growing a cleaning agency — from someone who actually runs one. Real scripts, real numbers, no fluff.</p>
+  <div class="eyebrow">The cleaning business blog</div>
+  <!-- FIXED: H1 now includes primary keyword "cleaning business" -->
+  <h1>Start, Hire, and <em>Scale</em> Your Cleaning Business.</h1>
+  <p>Practical guides written by someone who actually runs a cleaning agency — not someone who researched one. Every article covers the operational reality: real pricing numbers, word-for-word scripts, and systems that work from day one.</p>
+</div>
+
+<!-- ADDED: 300+ word keyword-rich intro for SEO -->
+<div class="blog-intro">
+  <p>Starting a cleaning business is one of the most accessible paths to building a real income-generating operation — low startup costs, recurring revenue, and demand that doesn't disappear in a downturn. But the gap between knowing the model and actually executing it is where most people get stuck.</p>
+
+  <p>The articles on this blog are written from inside a real cleaning agency that's operating right now. Not adapted from YouTube videos, not assembled from research, and not written by someone who cleaned houses ten years ago and now sells courses about it. The pricing tables, phone scripts, and hiring frameworks here are the same ones used day-to-day in an active residential cleaning operation.</p>
+
+  <p>If you're figuring out <a href="https://cleaningagencyplaybook.com/blog/how-to-start-cleaning-business.html">how to start a cleaning business</a> — the LLC setup, the tech stack, hiring your first cleaner before you run any ads — that's covered here. If you're trying to understand <a href="https://cleaningagencyplaybook.com/blog/cleaning-business-pricing-guide.html">how much to charge for cleaning services</a> without underpricing yourself out of a real margin, there's a full breakdown of what professional agencies actually charge in 2026. And if you've already got a few clients and you're wondering <a href="https://cleaningagencyplaybook.com/blog/how-to-scale-cleaning-business.html">how to scale a cleaning business</a> past $5K/month, the phase-by-phase roadmap is here too.</p>
+
+  <p>The most underestimated part of running a cleaning agency isn't finding clients or hiring cleaners — it's the <a href="https://cleaningagencyplaybook.com/blog/cleaning-business-phone-script.html">phone call</a>. Most leads are lost not because the price is wrong, but because the person answering doesn't have a script. A structured call process converts 40%+ of inbound inquiries into bookings. Without one, the same leads convert at half that rate or worse.</p>
+
+  <p>Use the articles below as a reference at whatever stage you're at. Each one covers a specific part of the cleaning business model in depth — with the actual numbers and operational detail that most free content leaves out.</p>
 </div>
 
 <div class="post-grid">
 
-  <!-- Post 1: Getting Started -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-start-cleaning-business.html">
     <div class="post-card-top">
       <span class="post-tag">Getting Started</span>
@@ -210,7 +315,6 @@
     <div class="post-meta">8 min read</div>
   </a>
 
-  <!-- Post 2: Pricing -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/cleaning-business-pricing-guide.html">
     <div class="post-card-top">
       <span class="post-tag">Pricing</span>
@@ -221,7 +325,6 @@
     <div class="post-meta">5 min read</div>
   </a>
 
-  <!-- Post 3: Hiring -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-hire-cleaners.html">
     <div class="post-card-top">
       <span class="post-tag">Hiring</span>
@@ -232,18 +335,16 @@
     <div class="post-meta">7 min read</div>
   </a>
 
-  <!-- Post 4: Getting Clients (NEW) -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-get-clients-cleaning-business.html">
     <div class="post-card-top">
       <span class="post-tag">Getting Clients</span>
       <span class="post-badge new">New</span>
     </div>
     <h2>How to Get Clients for a Cleaning Business (7 Channels That Actually Work)</h2>
-    <p>Every client acquisition channel ranked by ROI — with realistic timelines, cost estimates, and what to do in what order.</p>
+    <p>Every client acquisition channel ranked by ROI — with realistic timelines, cost estimates, and the right order to attack them.</p>
     <div class="post-meta">7 min read</div>
   </a>
 
-  <!-- Post 5: Phone Script (NEW) -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/cleaning-business-phone-script.html">
     <div class="post-card-top">
       <span class="post-tag">Scripts &amp; Conversion</span>
@@ -254,7 +355,6 @@
     <div class="post-meta">6 min read</div>
   </a>
 
-  <!-- Post 6: Scaling (NEW) -->
   <a class="post-card" href="https://cleaningagencyplaybook.com/blog/how-to-scale-cleaning-business.html">
     <div class="post-card-top">
       <span class="post-tag">Scaling</span>
